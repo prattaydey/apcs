@@ -15,7 +15,7 @@ UNRESOLVED MYSTERIES:
 
 public class BigSib {
 	public static String greet(String name){
-		Result = "Why, hello there, " + name + ". How do you do?");
+		result = "Why, hello there, " + name + ". How do you do?");
 		return result
 	}
 }
