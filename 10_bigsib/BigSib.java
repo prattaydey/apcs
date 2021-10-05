@@ -1,16 +1,15 @@
 //Prattay Dey
 //APCS
-//HW09 -- BigSibs
-//2021-10-02
+//HW10 -- BigSibs
+//2021-10-04
 
 /*
 DISCOVERIES:
-- You can call a function within a java file that is defined in another java file, as long as they are in the same directory.
-- If we aren't intending to exexute anything in a java file, a main() method is not required. 
+- Void is used in a function that is not intended to return anything. 
+- If you want the function to return something, replace void with the intended data type. In this case, we want to return a string.
 
 UNRESOLVED MYSTERIES:
-- Can you call a function that is defined in another file in a different directory?
-- Why is String capitalized while the other data types are in lowercase?
+- What are some of the advantages of having a void function rather than a function that returns something?
 */
 
 public class BigSib {
