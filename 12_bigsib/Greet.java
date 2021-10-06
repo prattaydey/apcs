@@ -22,13 +22,13 @@ public class Greet {
 	
 	BigSib dave = new BigSib();
 	dave.setHelloMsg("Hey ya");
-	greeting += dave.greet("Kong Fooey");
+	greeting = dave.greet("Kong Fooey");
 	
 	System.out.println(greeting);
 	
 	BigSib john = new BigSib();
 	john.setHelloMsg("Sup");
-	greeting += john.greet("mom");
+	greeting = john.greet("mom");
 	
 	System.out.println(greeting);
 
