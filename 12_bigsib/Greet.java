@@ -1,5 +1,4 @@
-//Team Not In Service: Prattay Dey, Nada Hameed, Fang Chen 
-//Featuring Duckies: Winnie, Ray, Cat
+//Prattay Dey
 //APCS
 //HW10 -- BigSibs
 //2021-10-05
