@@ -1,7 +1,7 @@
 //Prattay Dey
 //APCS
-//HW10 -- BigSibs
-//2021-10-04
+//HW12 -- BigSib Instance Variables
+//2021-10-05
 
 /*
 DISCOVERIES:
