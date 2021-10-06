@@ -12,20 +12,25 @@ public class Greet {
     	richard.setHelloMsg("Word up");
     	greeting = richard.greet("freshman");
 	
+	System.out.println(greeting);
+	
 	BigSib bob = new BigSib();
 	bob.setHelloMsg("Salutations");
-	greeting += bob.greet("Dr. Spaceman");
+	greeting = bob.greet("Dr. Spaceman");
+	
+	System.out.println(greeting);
 	
 	BigSib dave = new BigSib();
 	dave.setHelloMsg("Hey ya");
 	greeting += dave.greet("Kong Fooey");
 	
+	System.out.println(greeting);
+	
 	BigSib john = new BigSib();
 	john.setHelloMsg("Sup");
 	greeting += john.greet("mom");
 	
-	
-    	System.out.println(greeting);
+	System.out.println(greeting);
 
   } //end main()
 } //end Greet
