@@ -1,4 +1,4 @@
-//Prattay Dey
+//Prattay Dey and Sophia Eiden
 //APCS
 //HW12 -- BigSib Instance Variables
 //2021-10-05
