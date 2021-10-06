@@ -20,7 +20,7 @@ public class BigSib {
 	} 
 	
 	public static String greet(String subject){
-		String result = (helloMsg + subject);
+		String result = (helloMsg + " " + subject);
 		return result;
 	}
 }
