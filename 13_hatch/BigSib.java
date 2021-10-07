@@ -14,10 +14,16 @@ UNRESOLVED MYSTERIES:
 */
 
 public class BigSib {
-	public static String helloMsg; // instance variable helloMsg
-	public static void setHelloMsg (String newMsg) { // method to set helloMsg value
-		helloMsg = newMsg;
+	private static String helloMsg; // instance variable helloMsg
+	
+	public BigSib(String newMsg){
+		helloMsg = newMsg
 	} 
+	
+	public void setHelloMsg(String newMsg){
+		BigSib helloMsg = new BigSib(newMsg);
+	}
+		
 	
 	public static String greet(String subject){
 		String result = (helloMsg + " " + subject);
