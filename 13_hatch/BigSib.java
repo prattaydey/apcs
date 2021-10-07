@@ -14,7 +14,7 @@ Q/C/C:
 */
 
 public class BigSib {
-	String helloMsg; 
+	static String helloMsg; 
 	
 	public BigSib(String newMsg){ //creates constructor
 		helloMsg = newMsg;
