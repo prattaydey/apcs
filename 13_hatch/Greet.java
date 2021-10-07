@@ -8,7 +8,7 @@ public class Greet {
 	public static void main( String[] args ) {
     	String greeting;
 
-    	BigSib richard = new BigSib("Word Up");
+    	BigSib richard = new BigSib("Word Up"); //creates object of class BigSib (calls the constructor)
     	greeting = richard.greet("freshman");
 	System.out.println(greeting);
 	
