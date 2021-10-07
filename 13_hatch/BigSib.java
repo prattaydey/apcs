@@ -14,7 +14,7 @@ Q/C/C:
 */
 
 public class BigSib {
-	private static String helloMsg; //instance var helloMsg
+	String helloMsg; 
 	
 	public BigSib(String newMsg){ //creates constructor
 		helloMsg = newMsg;
