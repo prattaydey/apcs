@@ -13,17 +13,17 @@ public class Greet {
 	System.out.println(greeting);
 	
 		
-	richard.HelloMsg("Salutations");
+	richard.helloMsg("Salutations");
 	greeting = richard.greet("Dr. Spaceman");
 	System.out.println(greeting);
 	
 	
-	richard.HelloMsg("Hey ya");
+	richard.helloMsg("Hey ya");
 	greeting = richard.greet("Kong Fooey");
 	System.out.println(greeting);
 	
 		
-	richard.HelloMsg("Sup");
+	richard.helloMsg("Sup");
 	greeting = richard.greet("mom");
 	System.out.println(greeting);
 
