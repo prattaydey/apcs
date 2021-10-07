@@ -14,17 +14,17 @@ public class Greet {
 	
 		
 	richard.setHelloMsg("Salutations");
-	greeting = bob.greet("Dr. Spaceman");
+	greeting = richard.greet("Dr. Spaceman");
 	System.out.println(greeting);
 	
 	
 	richard.setHelloMsg("Hey ya");
-	greeting = dave.greet("Kong Fooey");
+	greeting = richard.greet("Kong Fooey");
 	System.out.println(greeting);
 	
 		
 	richard.setHelloMsg("Sup");
-	greeting = john.greet("mom");
+	greeting = richard.greet("mom");
 	System.out.println(greeting);
 
   } //end main()
