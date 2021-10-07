@@ -14,7 +14,7 @@ Q/C/C:
 */
 
 public class BigSib {
-	static String helloMsg; 
+	String helloMsg; 
 	
 	public BigSib(String newMsg){ //creates constructor
 		helloMsg = newMsg;
@@ -27,7 +27,7 @@ public class BigSib {
 	}
 	*/
 	
-	public static String greet(String subject){
+	public String greet(String subject){
 		String result = (helloMsg + " " + subject);
 		return result;
 	}
