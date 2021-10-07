@@ -12,7 +12,7 @@ public class Greet {
     	greeting = richard.greet("freshman");
 	System.out.println(greeting);
 	
-		
+	/*	
 	richard.helloMsg("Salutations");
 	greeting = richard.greet("Dr. Spaceman");
 	System.out.println(greeting);
@@ -26,7 +26,8 @@ public class Greet {
 	richard.helloMsg("Sup");
 	greeting = richard.greet("mom");
 	System.out.println(greeting);
-
+	*/
+		
   } //end main()
 } //end Greet
 
