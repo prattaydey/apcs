@@ -1,16 +1,14 @@
-//Team Elder Gods: Prattay Dey and Sophia Eiden
+//Prattay Dey
 //APCS
-//HW12 -- BigSib Instance Variables
-//2021-10-06
+//HW14 -- Customize Your Creation
+//2021-10-07
 
 /*
 DISCOVERIES:
-- Constructors can have variable defs inside them
-- You can call on the constructor to create an object in the class, using keyword "new"
-- Constructors can have multiple parameters
+- 
 
 Q/C/C:
-- What are the benefits of using a constructor compared to a method? 
+- 
 */
 
 public class BigSib {
