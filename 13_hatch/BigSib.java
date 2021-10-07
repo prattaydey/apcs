@@ -17,7 +17,7 @@ public class BigSib {
 	private static String helloMsg; //instance var helloMsg
 	
 	public BigSib(String newMsg){ //creates constructor
-		helloMsg = newMsg
+		helloMsg = newMsg;
 	} 
 	
 	/*
