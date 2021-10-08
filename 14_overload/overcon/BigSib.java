@@ -6,7 +6,7 @@
 public class BigSib {
 	String helloMsg; 
 	
-	public BigSib(String newMsg){ // creates constructor
+	public BigSib(String newMsg){ // creates overloaded constructor, takes String parameter newMsg
 		helloMsg = newMsg;
 	} 
 	
