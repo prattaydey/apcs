@@ -1,4 +1,7 @@
-
+//Prattay Dey
+//APCS
+//HW14 -- Customize Your Creation
+//2021-10-07
 
 public class BigSib {
 	String helloMsg; 
