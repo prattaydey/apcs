@@ -14,8 +14,8 @@ Q/C/C:
 public class BigSib {
 	String helloMsg; 
 	
-	public BigSib(String newMsg){ // creates def constructor
-		helloMsg = newMsg;
+	public BigSib(){ // creates def constructor
+		helloMsg = "Hello";
 	} 
 	
 	public String greet(String subject){
