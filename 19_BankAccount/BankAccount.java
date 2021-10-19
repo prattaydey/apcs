@@ -3,6 +3,7 @@ JPH - Hugo Jenkins, Prattay Dey, Jacob Kirmayer
 APCS
 HW19-- Mo Money Mo Problems ...MORE AWESOME
 2021-10-18
+
 DISCO:
 A method can only return one value so there is soemtimes no need for an else
 statement.
