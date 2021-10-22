@@ -7,16 +7,21 @@
 public class Coin {
 
   //attributes aka instance vars
-
-
+  public double value;
+  public boolean upFace;
+  public String name;
+  public int flipCtr;
+  public int headsCtr;
+  public int tailsCtr;
+  public double bias;
 
   /***
    *  Coin() -- default constuctor
-   *  precond:
-   *  postcond:
+   *  precond: no input
+   *  postcond: string value for name "null"
    ***/
   public Coin() {
-
+    name = "null";
   }
 
 
@@ -32,6 +37,7 @@ public class Coin {
       postcond:
   ***/
   public Coin( String s ) {
+    if
 
   }
 
@@ -101,7 +107,13 @@ public class Coin {
    * Returns "heads" or "tails"
    ***/
   public String flip() {
-
+    headOrTails = Math.random()
+    if (headOrTails >= bias) {
+      return "heads";
+      System.out.println ()
+    } else {
+      return "tails";
+    }
   }
 
 
