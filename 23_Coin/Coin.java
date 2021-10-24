@@ -1,14 +1,24 @@
 /***
- *  class Coin
- *  by Clyde "Thluffy" Sinclair
- *  SKELETON
+Monke: Prattay Dey + Winnie, Jeffery Tang + Mathias
+APCS
+HW23 -- Coin
+2021-10-23
+time spent: 0.8 hr
  ***/
 
+/*
+DISCOS:
+- Initially thought instance var upFace would be a boolean as there are only 2 possibilities, but found it much more convenient to use it in a String.
+
+QCC:
+- For the reset() method, one of the parameters inputs allows the user to change the bias value. Why would we need to change bias if a coin always has a 50/50 chance of landing on either side?
+- We noticed that the reset() method is not used in the driver file, so is it necessary? 
+*/
 public class Coin {
 
   //attributes aka instance vars
   public double value;
-  public boolean upFace;
+  public String upFace;
   public String name;
   public int flipCtr;
   public int headsCtr;
@@ -18,10 +28,13 @@ public class Coin {
   /***
    *  Coin() -- default constuctor
    *  precond: no input
-   *  postcond: string value for name "null"
+   *  postcond: default value for name "null", default face "heads", and default bias 0.5 (equal chance of landing heads or tails).
    ***/
   public Coin() {
     name = "null";
+    upFace = "heads";
+    bias = 0.5;
+    System.out.println(toString());
   }
 
 
@@ -37,8 +50,11 @@ public class Coin {
       postcond:
   ***/
   public Coin( String s ) {
-    if
-
+    name = s;
+    upFace = "heads";
+    bias = 0.5;
+    value = assignValue(s);
+    System.out.println(toString());
   }
 
 
@@ -48,30 +64,34 @@ public class Coin {
       postcond:
   ***/
   public Coin( String s, String nowFace ) {
-
+    name = s;
+    upFace = nowFace;
+    bias = 0.5;
+    value = assignValue(s);
+    System.out.println(toString());
   }
 
 
   // Accessors...
   // ----------------------------
   public String getUpFace() {
-
+    return upFace;
   }
 
   public int getFlipCtr() {
-
+    return flipCtr;
   }
 
   public double getValue() {
-
+    return value;
   }
 
   public int getHeadsCtr() {
-
+    return headsCtr;
   }
 
   public int getTailsCtr() {
-
+    return tailsCtr;
   }
   // ----------------------------
 
@@ -83,7 +103,22 @@ public class Coin {
    * Returns value assigned.
    ***/
   private double assignValue( String s ) {
-
+    if (s == "penny") {
+      value = 0.01;
+    } else if (s == "nickel") {
+      value = 0.05;
+    } else if (s == "dime") {
+      value = 0.10;
+    } else if (s == "quarter") {
+      value = 0.25;
+    } else if (s == "half dollar") {
+      value = 0.50;
+    } else if (s == "dollar") {
+      value = 1.00;
+    } else {
+      System.out.println ("ERROR: unrecognized coin name");
+    }
+    return value;
   }
 
 
@@ -93,7 +128,11 @@ public class Coin {
       postcond: Coin's attribs reset to starting vals
   ***/
   public void reset( String s, double d ) {
-
+    upFace = s;
+    bias = d;
+    flipCtr = 0;
+    headsCtr = 0;
+    tailsCtr = 0;
   }
 
 
@@ -107,12 +146,17 @@ public class Coin {
    * Returns "heads" or "tails"
    ***/
   public String flip() {
-    headOrTails = Math.random()
+    flipCtr += 1;
+    double headOrTails = Math.random();
+    System.out.println(headOrTails);
     if (headOrTails >= bias) {
-      return "heads";
-      System.out.println ()
+      headsCtr += 1;
+      upFace = "heads";
+      return upFace;
     } else {
-      return "tails";
+      tailsCtr += 1;
+      upFace = "tails";
+      return upFace;
     }
   }
 
@@ -124,7 +168,7 @@ public class Coin {
    * or both showing tails. False otherwise.
    ***/
   public boolean equals( Coin other ) {
-
+    return this.upFace == other.upFace;
   }
 
 
@@ -134,7 +178,7 @@ public class Coin {
    * postcond: Return String comprised of name and current face
    ***/
   public String toString() {
-
+    return (name + " -- " + upFace);
   }
 
 }//end class
