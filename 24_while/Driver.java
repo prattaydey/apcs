@@ -67,7 +67,7 @@ public class Driver {
       }
     }
     System.out.println("Number of flips: ");
-    System.out.println(m.getflipCtr());
+    System.out.println(m.getFlipCtr());
     System.out.println("Number of heads for the first coin: ");
     System.out.println(m.getHeadsCtr());
     System.out.println("Number of heads for the second coin: ");
