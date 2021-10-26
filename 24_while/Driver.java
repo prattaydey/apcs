@@ -3,7 +3,7 @@ Monke: Prattay Dey + Winnie, Jeffery Tang + Mathias
 APCS
 HW24 -- Coin Flip with While
 2021-10-25
-time spent: 1
+time spent: 1.0 hr
  ***/
 
 /*
