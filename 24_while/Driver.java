@@ -67,13 +67,13 @@ public class Driver {
       }
     }
     System.out.println("Number of flips: ");
-    System.out.println(m.getflipCtr());
+    System.out.println(hello.getflipCtr());
     System.out.println("Number of heads for the first coin: ");
-    System.out.println(m.getHeadsCtr());
-    System.out.println("Number of heads for the first coin: ");
-    System.out.println(n.getHeadsCtr());
-    System.out.println("Total number of heads for the first coin: ");
-    System.out.println(m.getHeadsCtr() + n.getHeadsCtr());
+    System.out.println(hello.getHeadsCtr());
+    System.out.println("Number of heads for the second coin: ");
+    System.out.println(world.getHeadsCtr());
+    System.out.println("Total number of heads: ");
+    System.out.println(hello.getHeadsCtr() + world.getHeadsCtr());
     System.out.println("Number of matches: ");
     System.out.println(matchCtr);
   }
