@@ -9,9 +9,10 @@ time spent: 0.2 hours
 /*
 DISCOS:
 - "++" operand is same as "+= 1", useful in incrementing counter variables in loops.
-
+- When testing out a 3 digit number as an input for fences, we saw no noteable difference in computation time. 
 QCC:
-- 
+- How large would fences have to be in order to find a noticeable difference in computation time between the while loop method and the recursion method? 
+- As we remember from Python earlier that a loop is generally faster in processing an output than recursion, what are the benefits of using recursion over a while loop?
 */
 
 public class Repeater{
