@@ -26,11 +26,11 @@ public class Repeater{
     return result;
   }
   public static String fenceR(int fences){
-    if (fences==1){
+    if (fences == 1){
       return "|";
     }
     else {
-      return fenceR(fences-1) + "--|";
+      return fenceR(fences - 1) + "--|";
     }
   }
   
