@@ -13,7 +13,7 @@ QCC:
 
 */
 
-public class Fence{
+public class Repeater{
   public static String fenceW(int fences){
     int built = 1; // built serves as counter 
     String result = "|";
