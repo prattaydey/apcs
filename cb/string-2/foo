@@ -1,0 +1,9 @@
+// doubleChar
+public String doubleChar(String str) {
+  String new_str = "";
+  for (int i=0; i < str.length(); i++) {
+    new_str += str.substring(i,i+1);
+    new_str += str.substring(i,i+1);
+  }
+  return new_str;
+}
