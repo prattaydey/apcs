@@ -54,14 +54,14 @@ public class Rof {
 		System.out.println(fenceF(1));
 		System.out.println(fenceF(3));
 		System.out.println(fenceF(5));
-    System.out.println("Employing for loop:");
+    		System.out.println("Employing for loop:");
 		System.out.println(reverseF("stressed"));
 		System.out.println(reverseF("desserts")); // made consistent
 		System.out.println(reverseF("a man a plan a canal panama"));
 
-    System.out.println("Employing recursion:");
-    System.out.println(reverseR("stressed"));
-    System.out.println(reverseR("desserts"));
-    System.out.println(reverseF("a man a plan a canal panama"));
+    		System.out.println("Employing recursion:");
+    		System.out.println(reverseR("stressed"));
+    		System.out.println(reverseR("desserts"));
+    		System.out.println(reverseF("a man a plan a canal panama"));
 	}
 }
