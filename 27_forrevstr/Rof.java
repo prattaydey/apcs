@@ -54,6 +54,7 @@ public class Rof {
 		System.out.println(fenceF(1));
 		System.out.println(fenceF(3));
 		System.out.println(fenceF(5));
+		
     		System.out.println("Employing for loop:");
 		System.out.println(reverseF("stressed"));
 		System.out.println(reverseF("desserts")); // made consistent
