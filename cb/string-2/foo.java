@@ -1,12 +1,7 @@
 /* 
 Prattay Dey
 APCS
-HW28 -- PPMP
-2021-10-30
-time spent: 1.0 hour
 */
-
-
 
 // doubleChar
 // Given a string, return a string where for every char in the original, there are two chars.
