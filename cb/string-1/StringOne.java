@@ -18,12 +18,12 @@ public class StringOne {
   }
 
   public static void main(String[] args) {
-    System.out.println(helloName("Bob")) // "Hello Bob!"
-    System.out.println(helloName("Alice")) // "Hello Alice!"
-    System.out.println(helloName("X")) // "Hello X!"
+    System.out.println(helloName("Bob")); // "Hello Bob!"
+    System.out.println(helloName("Alice")); // "Hello Alice!"
+    System.out.println(helloName("X")); // "Hello X!"
 
-    System.out.println(makeAbba("Hi", "Bye")) // "HiByeByeHi"
-    System.out.println(makeAbba("Yo", "Alice")) // "YoAliceAliceYo"
-    System.out.println(makeAbba("What", "Up")) // "WhatUpUpWhat"
+    System.out.println(makeAbba("Hi", "Bye")); // "HiByeByeHi"
+    System.out.println(makeAbba("Yo", "Alice")); // "YoAliceAliceYo"
+    System.out.println(makeAbba("What", "Up")); // "WhatUpUpWhat"
     }
 }
