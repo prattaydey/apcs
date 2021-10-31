@@ -7,7 +7,7 @@ public class StringTwo {
   
   // doubleChar
   // Given a string, return a string where for every char in the original, there are two chars.
-  public String doubleChar(String str) {
+  public static String doubleChar(String str) {
     String new_str = "";
     for (int i=0; i < str.length(); i++) {
       new_str += str.substring(i,i+1);
@@ -32,7 +32,7 @@ public class StringTwo {
 
   // catDog
   // Return true if the string "cat" and "dog" appear the same number of times in the given string.
-  public boolean catDog(String str) {
+  public static boolean catDog(String str) {
     int dogCtr = 0;
     int catCtr = 0;
     for (int i=0; i < str.length() - 2; i++){
@@ -54,7 +54,7 @@ public class StringTwo {
 
   // countCode
   // Return the number of times that the string "code" appears anywhere in the given string, except we'll accept any letter for the 'd', so "cope" and "cooe" count.
-  public int countCode(String str) {
+  public static int countCode(String str) {
     int counter = 0;
     for (int i=0; i < str.length()-3; i++){
       if (str.substring(i, i + 2).equals("co") && (str.substring(i+3, i+4).equals("e"))){
@@ -66,7 +66,7 @@ public class StringTwo {
 
   // endOther
   // Given two strings, return true if either of the strings appears at the very end of the other string, ignoring upper/lower case differences (in other words, the computation should not be "case sensitive").
-  public boolean endOther(String a, String b) {
+  public static boolean endOther(String a, String b) {
     String a2 = a.toLowerCase();
     String b2 = b.toLowerCase();
     if (a2.length() >= b.length() && a2.substring(a.length() - b.length(), a.length()).equals(b2)){
@@ -83,7 +83,7 @@ public class StringTwo {
 
   // xyzThere
   // Return true if the given string contains an appearance of "xyz" where the xyz is not directly preceeded by a period (.). So "xxyz" counts but "x.xyz" does not.
-  public boolean xyzThere(String str) {
+  public static boolean xyzThere(String str) {
     boolean match = false;
     if (str.length() >= 3 && str.substring(0,3).equals("xyz")){
       match = true;
