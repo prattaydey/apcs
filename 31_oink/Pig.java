@@ -103,6 +103,7 @@ public class Pig
 
 
   public static void main( String[] args ) {
+    System.out.println(hasA("hello", "b")); // 0 occurences, return -1
     System.out.println(hasA("hello", "e")); // 1 occurence
     System.out.println(hasA("hello", "l")); // 2 occurences
 
