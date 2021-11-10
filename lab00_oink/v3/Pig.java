@@ -107,16 +107,18 @@ public class Pig {
     return hasA(VOWELS, letter );
   }
 
-  // public static boolean hasVowelY( String w) {
-  //   int idx = w.indexOf("y");
-  //   if (idx==w.length()-1){return true;}
-  //   if (idx>0){
-  //     if (!isAVowel(w.substring(idx-1,idx))&&(!isAVowel(w.substring(idx+1,idx+2)))){
-  //       return true;
-  //     }
-  //   }
-  //   return false;
-  // }
+  public static boolean hasVowelY( String w) {
+     int idx = w.indexOf("y");
+     if (idx==w.length()-1){
+       return true;
+     }
+     if (idx>0){
+       if (hasAVowel(w) == false && idx > -1){
+         return true;
+       }
+     }
+     return false;
+   }
 
 
   /**
