@@ -173,9 +173,6 @@ public class Pig {
       if ( isAVowel( w.substring(i,i+1) ) )
         ans += w.substring( i, i+1 ); //grow the return String
     }
-    if (hasVowelY(w)){
-      ans += "y";
-    }
     return ans;
   }
 
