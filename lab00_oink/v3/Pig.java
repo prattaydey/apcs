@@ -5,21 +5,21 @@ L00 -- Pig Latin Translator
 2021-11-08
 time spent: 0.5 hours
 DISCOS:
-- We found out in which cases the letter "y" is a vowel and implemented that into our code.
-- We found the instance variables very helpful when coding methods.
+- Our initial attempts had many out-of-bounds errors during for loops, as our code allowed the index to exceed the array length.
+- When trying to isolate a specific character in a string using subset(), the syntax is s.subset(char, char + 1) -- NOT simply s.subset(char)
 QCCs:
-- How would a word or phrase be translated if it contained an apostrophe?
-HOW WE UTILIZED SCANNER DEMO (v3)
-- We utilized scanner demo to learn the scanner class and input stream and used the
-while loop in our project and checked with hasNext for every line and checked the length of each line.
-WHAT CAUSES THE RUNTIME ERROR IN THE SCANNER DEMO
-- words.in has an odd number of inputs and hasNext does not check for the final line.
+- How would our methods be different if they took in a char input rather than a String?
 TO DO LIST:
 1) Ensure there are no errors in current code.
 2) Test punctuation functionality.
 3) Create method to separate each word of a sentence to use as an input for the translator and combine outputs to creat fully translated sentence.
 new in v3:
 input stream functionality
+
+We utilized scanner demo to learn the scanner class and input stream and used the 
+while loop in our project
+
+The error in the demo scanner occurs because hasNext() is not checked before calling next() the second time in the while loop's procedure, and the number of words is odd.
 */
 import java.util.Scanner;
 public class Pig {
@@ -107,18 +107,16 @@ public class Pig {
     return hasA(VOWELS, letter );
   }
 
-  public static boolean hasVowelY( String w) {
-     int idx = w.indexOf("y");
-     if (idx==w.length()-1){
-       return true;
-     }
-     if (idx>0){
-       if (hasAVowel(w) == false && idx > -1){
-         return true;
-       }
-     }
-     return false;
-   }
+  // public static boolean hasVowelY( String w) {
+  //   int idx = w.indexOf("y");
+  //   if (idx==w.length()-1){return true;}
+  //   if (idx>0){
+  //     if (!isAVowel(w.substring(idx-1,idx))&&(!isAVowel(w.substring(idx+1,idx+2)))){
+  //       return true;
+  //     }
+  //   }
+  //   return false;
+  // }
 
 
   /**
@@ -182,7 +180,7 @@ public class Pig {
   public static String firstVowel( String w ) {
 
     String ans = "";
-    if ( hasAVowel(w) )
+    if ( hasAVowel(w) ) 
     //Q: Why this necess? A: to prevent having a string with no length from being read at index 0.
       ans = allVowels(w).substring(0,1);
 
