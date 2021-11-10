@@ -4,23 +4,29 @@ APCS
 L00 -- Pig Latin Translator
 2021-11-08
 time spent: 0.5 hours
+
 DISCOS:
 - We found out in which cases the letter "y" is a vowel and implemented that into our code.
 - We found the instance variables very helpful when coding methods.
+
 QCCs:
 - How would a word or phrase be translated if it contained an apostrophe?
-HOW WE UTILIZED SCANNER DEMO (v3)
+
+HOW WE UTILIZED SCANNER DEMO (v4)
 - We utilized scanner demo to learn the scanner class and input stream and used the
 while loop in our project and checked with hasNext for every line and checked the length of each line.
 WHAT CAUSES THE RUNTIME ERROR IN THE SCANNER DEMO
 - words.in has an odd number of inputs and hasNext does not check for the final line.
+
 TO DO LIST:
 1) Ensure there are no errors in current code.
 2) Test punctuation functionality.
 3) Create method to separate each word of a sentence to use as an input for the translator and combine outputs to creat fully translated sentence.
-new in v3:
-input stream functionality
+
+new in v4:
+vowel conditionals added to y
 */
+
 import java.util.Scanner;
 public class Pig {
 
