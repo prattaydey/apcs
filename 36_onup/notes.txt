@@ -1,0 +1,77 @@
+Prattay Dey
+APCS
+HW36 -- All Quacked Up
+2021-10-17
+time spent: 0.7 hours
+
+THREE main types of errors:
+  * Compile-time errors
+  * Run-time errors
+  * Logic errors
+
+
+
+COMPILE-TIME ERRORS:
+  * Another term would be "Syntax Error"
+    - Ex: Forgetting a semi-colon at end of statement, missing a curly brace
+
+  * APPROACH to preventing/solving this:
+    - "Never stray far from compilable/runnable code."
+    - Add small amounts of code at a time, will make it easier to locate syntax errors
+    - When given a long list of error messages, always try to resolve the very first one.
+    - The first error may be the root of the rest of the error messages.
+
+  * CHECKLIST for syntax:
+    - Balanced parentheses and brackets/braces.
+    - Class -> methods -> statements
+    - Case-sensitive; Uppercase and lowercase not interchangeable
+    - Semicolons at the end of statements.
+    - Strings have double quotes, characters have single quotes.
+    - Variables and values are the same data type.
+    - When calling a method, make sure inputs are in the right order and right data type.
+    - Object that method is being invoked on is the right type.
+    - Value methods are returning a value, void methods are returning nothing.
+    - If invoking static method outside of its class, need to include class name when calling.
+
+  * DEBUGGING by bisection:
+    - Make new file with same contents, use this to try to locate error.
+    - Cut out half the code, run the first half and check for errors.
+    - If first half runnable, error is in second half.
+    - If first half has a compile error, cut in half again and repeat until you narrow down the search.
+
+
+
+RUN-TIME ERRORS:
+  * Often due to "hanging" in infinite loop or infinite recursion
+
+  * INFINITE LOOP:
+    - To locate loop
+      Add print statement before loop "entering the loop" & after loop "exiting the loop"
+    - After locating loop
+      print value of variables (x,y) in condition, then print boolean value of condition itself
+    - Last value of condition should be FALSE to end it, if it continues then look at values of vars (x,y)
+
+  * INFINITE RECURSION:
+    - Usually reports StackOverflowError
+    - Check for a base case that should end recursion
+    - If base case already exists & still error,
+      print parameters at beginning of method to see their values for each recursive call.
+    - Each recursive call, parameters should be moving towards base case.
+
+  * EXCEPTION OCCURS:
+    - NullPointer -> tried to access an instance variable or method that has no value assigned to it
+    - ArrayIndexOutOfBounds -> index that is being accessed is either negative or goes past the max index of the ArrayIndexOutOfBounds
+    - StackOverflowError -> Infinite recursion
+    - ArithmeticException -> something went wrong during arithmetic operation (Ex: division by zero)
+
+
+
+LOGIC ERRORS:
+  * Hard to find because they cannot be found by compiler or interpreter
+
+  * COMMON LOGIC ERRORS:
+    - Divided integers uses floor division. For fraction outputs, use double type.
+    - Use ints for countable things, floats for measurable things.
+    - Should almost never use == operator for doubles, as doubles are not perfectly accurate.
+      Instead use (Math.abs(double - value) < .000001)
+    - (==) operator (Memory) vs. equals() method (Equivalence)
