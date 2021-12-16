@@ -1,3 +1,16 @@
+// Peanut Butter and Nutella - Prattay Dey + Winnie, Brian Li + Robert, Nafiz Labib + Martha
+// APCS pd6
+// HW48 -- Binary Search
+// 2021-12-15
+// time spent: 0.7 hours
+
+/***
+    DISCO:
+    - You can use break; to exit a loop. You can use return; to exit a method invocation.
+    QCC:
+    - What exactly is the Comparable object?
+ ***/
+
 /**
    class LinSearch
 **/
@@ -87,4 +100,3 @@ public class LinSearch
   }//end main()
 
 }//end class LinSearch
-
