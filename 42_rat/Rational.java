@@ -77,7 +77,6 @@ public class Rational{
     this.q *= addend.q;
     addendp *= temp;
     addendq *= temp;
-
     this.p += addendp;
     ratio = (double)p / q;
   }
@@ -124,6 +123,22 @@ public class Rational{
     else{
       return -1;
     }
+  }
+
+  public boolean equals(Object other){
+    Rational temp = new Rational(p, q);
+    if (other instanceof Rational){
+      Rational newR = new (Rational)other;
+      newR.reduce();
+    }
+    else {
+      throw new ClassCastException("\ncompareTo() input not a Rational");
+    }
+    temp.reduce();
+    if (temp.p == newR.p && temp.q == newR.q){
+      return true;
+    }
+    return false;
   }
 
 }
