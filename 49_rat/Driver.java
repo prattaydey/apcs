@@ -1,22 +1,24 @@
 // Peanut Butter and Nutella - Prattay Dey + Winnie, Brian Li + Robert, Nafiz Labib + Martha
 // APCS pd6
-// HW42 -- Rational numbers
-// 2021-12-02
-// time spent: 0.8 hours
+// HW49 -- Rational Standards Compliance
+// 2021-12-22
+// time spent: 0.5 hours
 
 /*
 DISCO
-- You can overload a method with a static and non-static version.
+- You can create your own error messages using throw
+- instanceof checks if an object is or isn't a certain class.
 
 QCC
-- Is there a more efficient way of adding and subtracting two rationals?
+- Does instanceof return true if you check if a subclass is an instanceof a superclass?
 */
 
-public class RationalDriver{
+public class Driver{
   public static void main(String args[]){
     Rational a = new Rational(5, 0);
     Rational b = new Rational(3, 4);
     Rational c = new Rational(4, 2);
+    Rational d = new Rational(6, 8);
 
     System.out.println("a.toString(): " + a.toString());
     System.out.println("b.toString(): " + b.toString());
@@ -93,21 +95,23 @@ public class RationalDriver{
     System.out.println("comparing b to c: " + b.compareTo(c));
     System.out.println("comparing c to a: " + c.compareTo(a));
     System.out.println("comparing c to b: " + c.compareTo(b));
+    System.out.println("comparing b to d: " + b.compareTo(d));
+    System.out.println("comparing d to b: " + d.compareTo(b));
 
     System.out.println("comparing c to c: " + c.compareTo(c));
 
-    // reset
-    a = new Rational(6,8);
-    b = new Rational(3, 4);
 
-    System.out.println("\nComparing original values:");
-    System.out.println("comparing a to b: " + a.equals(b)); //true
+    System.out.println("\nTesting for equal values:");
+    System.out.println("comparing a to b: " + a.equals(b)); //false
     System.out.println("comparing a to c: " + a.equals(c)); //false
-    System.out.println("comparing b to a: " + b.equals(a)); //true
+    System.out.println("comparing b to a: " + b.equals(a)); //false
     System.out.println("comparing b to c: " + b.equals(c)); //false
     System.out.println("comparing c to a: " + c.equals(a)); //false
     System.out.println("comparing c to b: " + c.equals(b)); //false
+    System.out.println("comparing b to d: " + b.equals(d)); //true
+    System.out.println("comparing d to b: " + d.equals(b)); //true
 
     System.out.println("comparing c to c: " + c.equals(c)); //true
+    System.out.println("comparing c to int: " + c.equals(18)); //error
   }
 }
