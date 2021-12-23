@@ -1,18 +1,19 @@
 // Peanut Butter and Nutella - Prattay Dey + Winnie, Brian Li + Robert, Nafiz Labib + Martha
 // APCS pd6
-// HW42 -- Rational numbers
-// 2021-12-02
-// time spent: 0.8 hours
+// HW49 -- Rational Standards Compliance
+// 2021-12-22
+// time spent: 0.5 hours
 
 /*
 DISCO
-- You can overload a method with a static and non-static version.
+- You can create your own error messages using throw
+- instanceof checks if an object is or isn't a certain class.
 
 QCC
-- Is there a more efficient way of adding and subtracting two rationals?
+- Does instanceof return true if you check if a subclass is an instanceof a superclass?
 */
 
-public class Rational{
+public class Rational implements Comparable{
   private int p;
   private int q;
   private double ratio;
@@ -100,6 +101,12 @@ public class Rational{
     if (a == b) {
       return a;
     }
+    if (a == 0){
+      return b;
+    }
+    if (b == 0){
+      return a;
+    }
     if (a < b) {
       return gcd(Math.abs(a), Math.abs(b - a));
     } else {
@@ -111,34 +118,40 @@ public class Rational{
     return gcd(p, q);
   }
 
-  public int compareTo(Rational compared){
+  public int compareTo(Object x){
     Rational temp = new Rational(p, q);
-    temp.divide(compared);
-    if (temp.ratio == 1){
-      return 0;
-    }
-    else if (temp.ratio > 1){
-      return 1;
+    if (x instanceof Rational){
+      temp.divide((Rational)x);
+      if (temp.ratio == 1){
+        return 0;
+      }
+      else if (temp.ratio > 1){
+        return 1;
+      }
+      else{ // temp.ratio < 1
+        return -1;
+      }
     }
     else{
-      return -1;
+      throw new ClassCastException("\ncompareTo() input not a Rational");
     }
   }
 
   public boolean equals(Object other){
-    Rational temp = new Rational(p, q);
+    Rational temp = new Rational(p, q); // copies this Rational to temp, to avoid changing original values
     if (other instanceof Rational){
-      Rational newR = (Rational)other;
-      newR.reduce();
+      ((Rational)other).reduce();
+      temp.reduce();
+      if (temp.p == ((Rational)other).p && temp.q == ((Rational)other).q){
+        return true;
+      }
+      else{
+        return false;
+      }
     }
     else {
-      throw new ClassCastException("\ncompareTo() input not a Rational");
+      throw new ClassCastException("\nequals() input not a Rational");
     }
-    temp.reduce();
-    if (temp.p == newR.p && temp.q == newR.q){
-      return true;
-    }
-    return false;
   }
 
 }
