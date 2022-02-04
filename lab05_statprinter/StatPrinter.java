@@ -1,15 +1,13 @@
 // Clyde "Thluffy" Sinclair
-// APCS pd0
+// APCS pd 8
 // L05 -- pulling it together
 // 2022-02-03r
-// time spent:  hrs
+// time spent: .5 hrs
 
 
 /**
    An AP-style question, for practice...
-
    GOAL: Write the StatPrinter class below.
-
    WHAT YOU NEED TO KNOW:
    The StatPrinter Object receives an
    ArrayList of nonnegative integers, then builds a frequency ArrayList in which
@@ -18,19 +16,16 @@
    list would be [0,1,2,2,0,1]. This is read as 0 zeroes, 1 one, 2 twos,
    2 threes, 0 fours, 1 five. The size of the frequency list is the equal to
    the maximum value of the data.
-
    A capability of the class is to calculate local modes from the frequency
    list. A local mode is a value that is greater than the value at index-1
    and greater than the value at index+1. A local mode is never at the end
    points of the list. For example, if the frequency list is [1,2,1,4,2,3,5]
    then the local modes are 2 and 4.
-
    This class is also capable of printing a histogram of the frequencies, using
    '*'s to indicate a frequency amount. To print a histogram, the user specifies
    the longest sequence of '*'s used and then all other values are printed in
    proportion to this value. For example, if longest bar is 10 and the frequency
    list is [1,2,1,4,2,3,5] then the histogram printed looks like this:
-
    0 : **
    1 : ****
    2 : **
@@ -38,9 +33,7 @@
    4 : ****
    5 : ******
    6 : **********
-
    For each method, state run time efficiency using Big O notation.
-
    TIPS FOR AWESOME:
    * Keys to Success were so named (by Thinkeren) for a reason.
    * Look over all fxns, think a bit, decide which to tackle first.
@@ -66,15 +59,15 @@ public class StatPrinter
   //  _frequency would be [0,0,3,2,0,1]
   public StatPrinter( ArrayList <Integer> data )
   {
-    int len = max(data) + 1;
-    int counter = 0;
-    for (int i = 0; i < len; i++){
-      for (int n = 0; n < len; n++){
-        if (data.get(n) == counter){
-          counter++;
+    _frequency = new ArrayList<Integer>(max(data) + 1);
+    for (int index : data) {
+      int i_counter = 0;
+      for (int num : data) {
+        if (index == num) {
+          i_counter++;
         }
       }
-      _frequency.add(counter);
+      _frequency.add(i_counter);
     }
   }
 
@@ -84,13 +77,13 @@ public class StatPrinter
   //postcond: returns largest integer in data
   public Integer max( ArrayList <Integer> data )
   {
-    int maxVal = 0;
-    for (int i = 0; i < data.size(); i++){
-      if (data.get(i) > max){
-        maxVal = data.get(i);
+    int max = data.get(0);
+    for (int num : data) {
+      if ( num > max) {
+        max = num;
       }
     }
-    return maxVal;
+    return max;
   }
 
 
@@ -107,19 +100,21 @@ public class StatPrinter
   public boolean isLocalMode( int i )
   {
     return (i > 0 && i < _frequency.size() - 1
-    && _frequency.get(i) > _frequency.get(i - 1)
-    && _frequency.get(i) > _frequency.get(i + 1));
+    && _frequency.get(i) > _frequency.get(i+1))
+    && (_frequency.get(i) > _frequency.get(i-1));
   }
+
+
 
 
   //*************** QUESTION 04 **************************
   //postcond: returns list of modes in _frequency
   public ArrayList<Integer> getLocalModes()
   {
-    public ArrayList<Integer> localModes = new ArrayList<Integer>;
-    for (int i = 1; i < _frequency.size() - 1; i++){
-      if (isLocalMode(i)){
-        localModes.get(i);
+    ArrayList <Integer> localModes = new ArrayList();
+    for(int i = 1; i <_frequency.size() - 1; i++) {
+      if (isLocalMode(i)) {
+        localModes.add(i);
       }
     }
     return localModes;
@@ -128,12 +123,9 @@ public class StatPrinter
 
   //*************** QUESTION 05 **************************
   //precond:  longestBar > 0
-  public void printHistogram( int longestBar )
-  {
-    double scale = longestBar / max(_frequency);
-    for (int i = 0; i < _frequency.size() - 1; i++){
-      System.out.println(i + ": " + )
-    }
-  }
+  // public void printHistogram( int longestBar )
+  // {
+  //   /* YOUR IMPLEMENTATION HERE */
+  // }
 
 }//end class StatPrinter
