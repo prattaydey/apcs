@@ -1,8 +1,8 @@
-// Clyde "Thluffy" Sinclair
-// APCS pd 8
+// Team FrogHats: Prattay Dey, Tasnim Chowdhury, Kevin Cheng
+// APCS pd8
 // L05 -- pulling it together
-// 2022-02-03r
-// time spent: .5 hrs
+// 2022-02-03
+// time spent: 2.0 hrs
 
 
 /**
@@ -57,6 +57,8 @@ public class StatPrinter
   //          _frequency.get(i) returns frequency of i in data
   //eg, for data [2,3,2,5,2,3]
   //  _frequency would be [0,0,3,2,0,1]
+
+  // StatPrinter(): O(n^2)
   public StatPrinter( ArrayList <Integer> data )
   {
     int freqSize = max(data) + 1;
@@ -76,6 +78,8 @@ public class StatPrinter
   //*************** QUESTION 01 **************************
   //precond:  data.size() > 0
   //postcond: returns largest integer in data
+
+  // max(): O(n)
   public Integer max( ArrayList <Integer> data )
   {
     int max = data.get(0);
@@ -98,6 +102,8 @@ public class StatPrinter
   //    isLocalMode(0) -> false
   //    isLocalMode(1) -> true
   //    isLocalMode(5) -> true
+
+  // isLocalMode(): O(1)
   public boolean isLocalMode( int i )
   {
     return (i > 0 && i < _frequency.size() - 1
@@ -110,10 +116,12 @@ public class StatPrinter
 
   //*************** QUESTION 04 **************************
   //postcond: returns list of modes in _frequency
+
+  // getLocalModes(): O(n)
   public ArrayList<Integer> getLocalModes()
   {
     ArrayList <Integer> localModes = new ArrayList();
-    for (int i = 1; i < _frequency.size() - 1; i++) {
+    for (int i = 1; i < _frequency.size() - 1; i++) { //starts at 1 and ends before the last index as those cannot be modes
       if (isLocalMode(i)) {
         localModes.add(i);
       }
@@ -124,18 +132,20 @@ public class StatPrinter
 
   //*************** QUESTION 05 **************************
   //precond:  longestBar > 0
+
+  // printHistogram(): O(n^2)
   public void printHistogram( int longestBar )
   {
-    double scale = longestBar / max(_frequency);
+    double scale = (double)longestBar / max(_frequency); // typecasted double because it is originally int division
     for (int i = 0; i < _frequency.size(); i++){
       String tally = "";
-      int counter = 0; // diag to easily count num of tallys per row
-      int adjusted = Math.round(Math.round(_frequency.get(i) * scale));
-      for (int n = adjusted; n > 0; n--){
+      // int counter = 0; // diag to easily count num of tallys per row
+      int adjusted = (int)Math.round(_frequency.get(i) * scale); // rounded from a double to long, then typecasted to int
+      for (int n = adjusted; n > 0; n--){ // num of tallys equals the adjusted number
         tally += "*";
-        counter++;
+        // counter++;
       }
-      System.out.println(i + ": " + tally + " " + counter);
+      System.out.println(i + ": " + tally);
     }
   }
 
