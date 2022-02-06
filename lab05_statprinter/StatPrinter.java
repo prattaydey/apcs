@@ -48,7 +48,7 @@ import java.util.ArrayList;
 public class StatPrinter
 {
   // instance variable for frequencies of each integer in input ArrayList
-  private ArrayList <Integer> _frequency;
+  private ArrayList <Integer> _frequency = new ArrayList();
 
 
   //*************** QUESTION 02 **************************
@@ -59,17 +59,18 @@ public class StatPrinter
   //  _frequency would be [0,0,3,2,0,1]
   public StatPrinter( ArrayList <Integer> data )
   {
-    _frequency = new ArrayList<Integer>(max(data) + 1);
-    for (int index : data) {
-      int i_counter = 0;
-      for (int num : data) {
-        if (index == num) {
-          i_counter++;
+    int freqSize = max(data) + 1;
+    for (int i = 0; i < freqSize; i++){
+      int counter = 0;
+      for (int n = 0; n < data.size(); n++ ){
+        if (data.get(n) == i){ // searches data, counting every occurence of the current index of frequency it is on
+          counter++;
         }
       }
-      _frequency.add(i_counter);
+      _frequency.add(counter); // adds the final tally of occurences for that specific index
     }
   }
+
 
 
   //*************** QUESTION 01 **************************
@@ -100,8 +101,8 @@ public class StatPrinter
   public boolean isLocalMode( int i )
   {
     return (i > 0 && i < _frequency.size() - 1
-    && _frequency.get(i) > _frequency.get(i+1))
-    && (_frequency.get(i) > _frequency.get(i-1));
+    && _frequency.get(i) > _frequency.get(i+1)
+    && _frequency.get(i) > _frequency.get(i-1));
   }
 
 
@@ -112,7 +113,7 @@ public class StatPrinter
   public ArrayList<Integer> getLocalModes()
   {
     ArrayList <Integer> localModes = new ArrayList();
-    for(int i = 1; i <_frequency.size() - 1; i++) {
+    for (int i = 1; i < _frequency.size() - 1; i++) {
       if (isLocalMode(i)) {
         localModes.add(i);
       }
@@ -123,9 +124,19 @@ public class StatPrinter
 
   //*************** QUESTION 05 **************************
   //precond:  longestBar > 0
-  // public void printHistogram( int longestBar )
-  // {
-  //   /* YOUR IMPLEMENTATION HERE */
-  // }
+  public void printHistogram( int longestBar )
+  {
+    double scale = longestBar / max(_frequency);
+    for (int i = 0; i < _frequency.size(); i++){
+      String tally = "";
+      int counter = 0; // diag to easily count num of tallys per row
+      int adjusted = Math.round(Math.round(_frequency.get(i) * scale));
+      for (int n = adjusted; n > 0; n--){
+        tally += "*";
+        counter++;
+      }
+      System.out.println(i + ": " + tally + " " + counter);
+    }
+  }
 
 }//end class StatPrinter
