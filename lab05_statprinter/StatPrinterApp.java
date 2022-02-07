@@ -58,7 +58,8 @@ public class StatPrinterApp
     System.out.println( "sp2 testing: " );
     System.out.println( "al2 max: " + sp1.max(al2) );
     System.out.println( "local modes: " );
-    for( Integer i : al2 ) {
+    // for( Integer i : al2 ) {
+    for (int i = 0; i < sp2.max(al2) + 1; i++) {
     System.out.println( i + " is local mode?\t" + sp2.isLocalMode(i) );
     }
     System.out.println( "histogram:" );
