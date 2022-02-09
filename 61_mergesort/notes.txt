@@ -1,0 +1,27 @@
+//Team stingRAY (Rin Furuoka, Abdullah Faruque, Yuki Feng)
+//APCS pd8
+//HW60: A Termite is-a Turtle, a Thinker is-a Turtle
+//2022-02-07
+//time spent: 0.5 hrs
+
+disco-
+I believe our class failed to sort the cards before the class ended. 
+I am pretty sure Mr.Mykolyk is trying to demonstrate what merge sorting looks like, a sorting mechanism that involves a sort of 
+binary division/divide and conquer strategy. I will try to demonstrate with a list of numbers here, rather than explain it
+
+THINKER FIRMWARE
+[1, 3, 4, 2, 5, 8, 6, 7]
+1) split it in half
+[1, 3, 4, 2]       [5, 8, 6, 7]
+2) split it again
+[1, 3] [4, 2]      [5, 8] [6, 7]                           each thinkeren is tasked the task of achieving splitting their "stuff" till every thinkeren has only one thing
+3) again
+[1] [3] [4] [2]    [5] [8] [6] [7]
+4) begin recollection in ordered fashion (?)
+[1, 3] [2,4]       [5, 8]   [6, 7]  
+5) recollection again
+[1, 2, 3, 4]       [5, 6, 7, 8]
+6) final recollection                                       for these last steps, the thinkerens must do some sort of sorting when regrouping their stuff
+
+
+qcc- why were we not allowed to look at our cards in class, don't we have to look at them to sort them when we start giving them back to their original owners?
