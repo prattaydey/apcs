@@ -10,8 +10,8 @@
 
   Summary of Algorithm:
   sort your array using sort. Sort uses merge
-  Sort breaks up your list till its turned into tiny pieces that are size 1. Then we start merging which does the sorting part, giving us a sorted list. 
- 
+  Sort breaks up your list till its turned into tiny pieces that are size 1. Then we start merging which does the sorting part, giving us a sorted list.
+
 
   ***/
 
@@ -35,22 +35,22 @@
           bCtr++;
         } else if(bCtr >= b.length) {
           c[i]=a[aCtr];
-          aCtr++;   //first two if statements are to check whether or not the counter is past the size. 
+          aCtr++;   //first two if statements are to check whether or not the counter is past the size.
                     // if it is past the size, we add the rest of the other array, cus ITS ALREADY sorted.
       } else {
         if(a[aCtr] < b[bCtr]){
             c[i]=a[aCtr];
-            aCtr++;   
+            aCtr++;
           } else {
             c[i]=b[bCtr];
-            bCtr++; 
-          }// adding process, knowing that the counter is less than the size of the list being worked with 
+            bCtr++;
+          }// adding process, knowing that the counter is less than the size of the list being worked with
         }
       }
       return c;
     }//end merge()
-  
-  
+
+
     /******************************************************
      * int[] sort(int[])
      * Sorts input array using mergesort algorithm
@@ -70,9 +70,9 @@
       return merge(sort(a), sort(b)); //keeps breaking it up till the input arr is size 1.
      } else {return arr;}
     }//end sort()
-  
-  
-  
+
+
+
     //-------------------HELPERS-------------------------
     //tester function for exploring how arrays are passed
     //usage: print array, mess(array), print array. Whaddayasee?
@@ -80,7 +80,7 @@
       for( int i = 0 ; i<a.length; i++ )
         a[i] = 0;
     }
-  
+
     //helper method for displaying an array
     public static void printArray( int[] a ) {
       System.out.print("[");
@@ -89,12 +89,12 @@
       System.out.println("]");
     }
     //---------------------------------------------------
-  
-  
+
+
     //main method for testing
     public static void main( String [] args )
     {
-        
+
         int[] arr0 = {0};
         int[] arr1 = {1};
         int[] arr2 = {1,2};
@@ -103,28 +103,27 @@
         int[] arr5 = {4,3,2,1};
         int[] arr6 = {9,42,17,63,0,512,23};
         int[] arr7 = {9,42,17,63,0,9,512,23,9};
-        int[] arr7 = {1,3,5,7,2,4,6,8,10};
+        int[] arr8 = {1,3,5,7,2,4,6,8,10};
 
-  
+
         System.out.println("\nTesting mess-with-array method...");
         printArray( arr3 );
         mess(arr3);
         printArray( arr3 );
-  
+
         System.out.println("\nMerging arr1 and arr0: ");
         printArray( merge(arr1,arr0) );
-  
+
         System.out.println("\nMerging arr4 and arr6: ");
         printArray( merge(arr4,arr6) );
-  
+
         System.out.println("\nSorting arr4-7...");
         printArray( sort( arr4 ) );
         printArray( sort( arr5 ) );
         printArray( sort( arr6 ) );
         printArray( sort( arr7 ) );
         printArray( sort( arr8 ) );
-      
+
     }//end main()
-  
+
   }//end class MergeSort
-  
