@@ -1,0 +1,25 @@
+Prattay Dey
+APCS
+L06 - Review
+2022-02-11
+
+ACTIVITY 1
+1a) public static double sentimentVal
+1b) Yes, it requires a String parameter. If you pass a different parameter there will be an error.
+1c) The method returns a double value.
+
+2)
+sentimentVal(appalling):  0.0
+sentimentVal(neutral): 0.03
+sentimentVal(good): 0.0
+sentimentVal(terrific): 2.39
+
+3a) It would compile because sentimentVal returns a double and num is initialized as a double variable.
+3b) This would not compile because sentimentVal returns a double, not a String.
+3c) This would not compile because sentimentVal only takes one parameter each call.
+
+
+ACTIVITY 2
+4) totalSentiment isolates each word in a string by first finding the index of the spaces between words, and then using substring to isolate that word. We take the sentimentVal of the word, and then use a while loop to iterate over each word in the string.
+
+5a) Yes, the star ratings do make sense according to the review.

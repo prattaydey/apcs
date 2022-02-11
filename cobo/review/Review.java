@@ -235,4 +235,20 @@ public class Review {
       }
       return result;
     }
+
+    public static void main(String[] args){
+      //Activity 1.2
+      System.out.println(sentimentVal("appalling"));
+      System.out.println(sentimentVal("neutral"));
+      System.out.println(sentimentVal("good"));
+      System.out.println(sentimentVal("terrific"));
+
+      //Activity 2.2
+      System.out.println(totalSentiment("SimpleReview.txt"));
+
+
+      //Activity 2.5
+      System.out.println(starRating("SimpleReview.txt"));
+
+    }
   }
