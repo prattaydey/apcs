@@ -1,7 +1,8 @@
-Prattay Dey
-APCS
+Team FrogHats: Prattay Dey, Tasnim Chowdhury, Kevin Cheng
+APCS pd8
 L06 - Review
 2022-02-11
+time spent: ___ hrs
 
 ACTIVITY 1
 1a) public static double sentimentVal

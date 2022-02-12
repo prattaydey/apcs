@@ -1,3 +1,9 @@
+// Team FrogHats: Prattay Dey, Tasnim Chowdhury, Kevin Cheng
+// APCS pd8
+// L06 - Review
+// 2022-02-11
+// time spent: ___ hrs
+
 import java.util.Scanner;
 import java.io.File;
 import java.util.HashMap;
