@@ -245,10 +245,11 @@ public class Review {
 
       //Activity 2.2
       System.out.println(totalSentiment("SimpleReview.txt"));
-
+      System.out.println(totalSentiment("PopeyesReview.txt"));
 
       //Activity 2.5
       System.out.println(starRating("SimpleReview.txt"));
+      System.out.println(starRating("PopeyesReview.txt"));
 
     }
   }
