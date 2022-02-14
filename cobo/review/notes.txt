@@ -1,7 +1,8 @@
-Prattay Dey
-APCS
+Team FrogHats: Prattay Dey, Tasnim Chowdhury, Kevin Cheng
+APCS pd8
 L06 - Review
 2022-02-11
+time spent: ___ hrs
 
 ACTIVITY 1
 1a) public static double sentimentVal
@@ -22,4 +23,54 @@ sentimentVal(terrific): 2.39
 ACTIVITY 2
 4) totalSentiment isolates each word in a string by first finding the index of the spaces between words, and then using substring to isolate that word. We take the sentimentVal of the word, and then use a while loop to iterate over each word in the string.
 
-5a) Yes, the star ratings do make sense according to the review.
+5a) Yes, the star ratings do make sense according to the review. Reviews with generally bad sentiment get low stars, and vice versa.
+5b) Two ways in which totalSentiment can be adjusted so it returns even more reasonable ratings is taking into account a broader range of vocabulary. Also, instead of looking at words one by one, it could consider the context.
+
+6a) The student's code returns a 0 star rating for any review that has a totalSentiment of over 15. Generally, a totalSentiment of over 15 should imply that it was very positive and return a high star value such as 5 stars.
+6b) The student can fix their code by changing the else statement to return 5 stars instead of 0. Or, if the student desires to keep the 0-4 scale, they can change the else statement to return 4 and decrement the other return values by 1.
+
+
+ACTIVITY 3
+3) indexOf returns the first occurrence of an input in a string, or -1 if the input is not found in the string at all. Substring returns a spliced string, taking the first input as its starting index and the second input as its end index (exclusive). It is sometimes necessary to add 1 to the position of the space when copying the remainder of the string because as the first input in substring is inclusive, we don't want to copy a character that was already included in the first half of the string.
+
+5) Calling a non static method requires first the initialization of an Object that calls the method. A static method does not require an Object.
+
+6) It could take a review and replace adjectives with either positive or negative adjectives to change the total sentiment of the review.
+
+
+ACTIVITY 4
+1) Competitors in the same business or consumers who had their own bad experience may autogenerate negative reviews to lower competition or even drive one out of business.
+
+2) Owners or acquaintances of a business may autogenerate reviews to inflate the prestige of their business and attract new consumers based on false experiences.
+
+3) - Iterate over each word in a review using while loop conditions: review.length() > 0 and review.indexOf(" ") > -1
+   - If the word contains "*", identify the sentiment value of it (negative, neutral, positive) & change it to the opposite.
+   - Add the word to the new, fake review string and remove it from the original review.
+   - Repeat and move onto next word until while loop ends.
+
+5) It removes the first character from oneWord and updates the oneWord variable accordingly.
+
+6) The "*" and other punctuation would interfere with matching the word to its corresponding value in cleanSentiment.csv, as that file does not take punctuation into account.
+
+7) Change adjectives to only those that have a very high sentiment value or go even further to change things other than adjectives.
+
+
+ACTIVITY 5
+ * A Caesar Cipher takes a message, and shifts every letter in the same amount. For example, "holy"
+ * shifted 23 gives a message of "eliv" after moving every letter down 23 spaces.
+ *
+ * 1.
+ * We chose to implement this because it's not too hard and the concept is similar to finding sentiment
+ * values for every word. 
+ *
+ * 2.
+ * The main problem in this program is finding what letter to replace the old letter. We got the idea to
+ * put the alphabet into a string, and using indexOf to find the "numerical value" of every letter in the
+ * initial message (a -> 1, b -> 2... ). To allow capitalized letter to also get shifted, we made a second
+ * string with all the capital letters and combined that with the LetterNumber because the letters would
+ * maintain the same numerical value.
+ *
+ * 3.
+ * public static String
+ * There needed to be a message and the change to that message, which is a string and an int required as
+ * parameters. The method needs to be static to work with the main method.

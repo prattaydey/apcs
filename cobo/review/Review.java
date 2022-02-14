@@ -1,3 +1,9 @@
+// Team FrogHats: Prattay Dey, Tasnim Chowdhury, Kevin Cheng
+// APCS pd8
+// L06 - Review
+// 2022-02-11
+// time spent: ___ hrs
+
 import java.util.Scanner;
 import java.io.File;
 import java.util.HashMap;
@@ -245,10 +251,11 @@ public class Review {
 
       //Activity 2.2
       System.out.println(totalSentiment("SimpleReview.txt"));
-
+      System.out.println(totalSentiment("PopeyesReview.txt"));
 
       //Activity 2.5
       System.out.println(starRating("SimpleReview.txt"));
+      System.out.println(starRating("PopeyesReview.txt"));
 
     }
   }
