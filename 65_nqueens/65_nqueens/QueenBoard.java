@@ -11,7 +11,7 @@ public class QueenBoard
 
   private int[][] _board;
 
-  public QueenBoard( int size ) 
+  public QueenBoard( int size )
   {
     _board = new int[size][size];
   }
@@ -19,10 +19,10 @@ public class QueenBoard
 
   /***
    * precondition: board is filled with 0's only.
-   * postcondition: 
-   * If a solution is found, board shows position of N queens, 
+   * postcondition:
+   * If a solution is found, board shows position of N queens,
    * returns true.
-   * If no solution, board is filled with 0's, 
+   * If no solution, board is filled with 0's,
    * returns false.
    */
   public boolean solve()
@@ -32,9 +32,9 @@ public class QueenBoard
 
 
   /**
-   *Helper method for solve. 
+   *Helper method for solve.
    */
-  private boolean solveH( int col ) 
+  private boolean solveH( int col )
   {
     return false;
   }
@@ -55,8 +55,8 @@ public class QueenBoard
 
   /***
    * <General description>
-   * precondition: 
-   * postcondition: 
+   * precondition: row and col must be within size of 2D int array
+   * postcondition: returns true if Queen is placed in that position, all tiles in front and front diagonals are marked as -1. Queen itself marked as 1. If Queen not placed, return false.
    */
   private boolean addQueen(int row, int col)
   {
@@ -81,8 +81,8 @@ public class QueenBoard
 
   /***
    * <General description>
-   * precondition: 
-   * postcondition: 
+   * precondition:
+   * postcondition:
    */
   private boolean removeQueen(int row, int col){
     if ( _board[row][col] != 1 ) {
@@ -107,8 +107,8 @@ public class QueenBoard
 
   /***
    * <General description>
-   * precondition: 
-   * postcondition: 
+   * precondition:
+   * postcondition:
    */
   public String  toString()
   {
@@ -129,34 +129,34 @@ public class QueenBoard
     QueenBoard b = new QueenBoard(5);
     System.out.println(b);
     /** should be...
-       0	0	0	0	0	
-       0	0	0	0	0	
-       0	0	0	0	0	
-       0	0	0	0	0	
-       0	0	0	0	0	
+       0	0	0	0	0
+       0	0	0	0	0
+       0	0	0	0	0
+       0	0	0	0	0
+       0	0	0	0	0
     */
 
     b.addQueen(3,0);
     b.addQueen(0,1);
     System.out.println(b);
     /** should be...
-       0	1	-1	-2	-1	
-       0	0	-2	0	0	
-       0	-1	0	-1	0	
-       1	-1	-1	-1	-2	
-       0	-1	0	0	0	
+       0	1	-1	-2	-1
+       0	0	-2	0	0
+       0	-1	0	-1	0
+       1	-1	-1	-1	-2
+       0	-1	0	0	0
     */
 
     b.removeQueen(3,0);
     System.out.println(b);
     /** should be...
-       0	1	-1	-1	-1	
-       0	0	-1	0	0	
-       0	0	0	-1	0	
-       0	0	0	0	-1	
-       0	0	0	0	0	 
+       0	1	-1	-1	-1
+       0	0	-1	0	0
+       0	0	0	-1	0
+       0	0	0	0	-1
+       0	0	0	0	0
     */
-    
+
   }
 
 }//end class
