@@ -102,7 +102,7 @@
    //================= YE OLDE SEPARATOR =================
 
    /***
-    * <General description>
+    * Places a Queen at the specified position, marks the tile as 1 and all tiles to the right and right diagonals of the Queen as -1. Used to extend a branch of the recursive tree.
     * precondition: row and col must be within size of 2D int array
     * postcondition: returns true if Queen is placed in that position,
     all tiles in front and front diagonals are marked as -1. Queen itself
@@ -130,9 +130,9 @@
 
 
    /***
-    * <General description>
-    * precondition:
-    * postcondition:
+    * Reverts the Queen and all tiles within its range back to 0. This is used to terminate a branch of the recursive branch when it is not leading to a possible solution.
+    * precondition: row and col must be within size of the 2D array
+    * postcondition: returns true if Queen is removed, all tiles within range set back to 0. Returns false if no Queen in that position.
     */
    private boolean removeQueen(int row, int col){
      if ( _board[row][col] != 1 ) {
