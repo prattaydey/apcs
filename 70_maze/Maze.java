@@ -9,8 +9,8 @@
  * class MazeSolver
  * Implements a blind depth-first exit-finding algorithm.
  * Displays probing in terminal.
- * 
- * USAGE: 
+ *
+ * USAGE:
  * $ java Maze [path/to/mazefile]
  * (mazefile is ASCII representation of a maze, using symbols below)
  *
@@ -18,9 +18,9 @@
  *  <INSERT YOUR SUMMARY OF ALGO HERE>
  *
  * DISCO
- * 
+ *
  * QCC
- * 
+ *
  ***/
 
 //enable file I/O
@@ -101,7 +101,8 @@ class MazeSolver
       for( j=0; j<w; j++ )
         retStr = retStr + _maze[j][i];
       retStr = retStr + "\n";
-    }
+    }(_maze[x][y] = "$" ) {
+      _solved = true;
     return retStr;
   }
 
@@ -130,18 +131,18 @@ class MazeSolver
     delay( FRAME_DELAY ); //slow it down enough to be followable
 
     //primary base case
-    if ( ??? ) {
-	???
+    if (_solved) {
+      return;
     }
     //other base cases
-    else if ( ??? ) {
-	???
+    else if (_maze[x][y] = "$" ) {
+      _solved = true;
       return;
     }
     //otherwise, recursively solve maze from next pos over,
     //after marking current location
     else {
-	???
+      
       System.out.println( this ); //refresh screen
 
 ???
@@ -151,7 +152,7 @@ class MazeSolver
 
   //accessor method to help with randomized drop-in location
   public boolean onPath( int x, int y) {
-      
+
   }
 
 }//end class MazeSolver
