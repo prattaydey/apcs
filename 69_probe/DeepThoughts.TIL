@@ -1,0 +1,33 @@
+Team Mamba (Kartik Vanjani, Prattay Dey)
+APCS PD8
+HW 69: Making Sense
+2022-03-02W
+Time Spent: .5 hrs
+ 
+ Mean execution times for boards of size n*n:
+ * n=5   0.029s    across 594318 executions
+ * n=6   0.101s    across 18984736 executions
+ * n=7   0.104s    across 20091201 executions
+ * n=8   Didn't run in time s    across NaN executions
+
+Q0: From any starting position, an open tour does not necessarily have to be found because the first move from the corners has three possibilities 
+while from other starting positions it has more, and so it is more likely to find a solution from one position rather than others because of the 
+positioning and possibilities, and any traps the Knight may encounter.  
+
+Q1: From any starting position a closed tour can be found because since we know there is a solution and it is a closed tour, any tile could yield the 
+knight visiting every tile at least once. 
+
+Q2: On an n x n board, there are a total of n^2 tiles. As n increases linearly, the number of tiles the knight has to visit to complete a tour increases 
+exponentially. This is why the execution time also increases exponentially, as it has to take into account all the new possible pathways a larger board opens up. 
+
+Q3: Optimize code to remove any excess code such as print statements or delays, as we only care about the execution time of the tour itself. Find average 
+execution time for completing a tour with each tile on the board as the starting point. (May take very long for larger dimensions)
+
+2) ALGO:
+* Keep the open spaces in mind. 
+* Mark exit.
+* Go up, left, down, or right into an open safe space.
+* If you encounter an invalid step, mark it as closed, and return back and go the opposite side.
+* Repeat till at exit. 
+
+
