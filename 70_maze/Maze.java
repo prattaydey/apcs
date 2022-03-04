@@ -1,4 +1,4 @@
-// Team Mamba: Prattay Dey, KArtik Vanjani
+// Team Mamba: Prattay Dey, Kartik Vanjani
 // APCS pd08
 // HW70 -- Thinkers of the Corn
 // 2022-03-04F
