@@ -144,7 +144,7 @@ finds maze exit (depth-first)
     //after marking current location
     else {
       _maze[x][y] = (HERO);
-      // try every move
+      // try every move in clockwise motion
       solve(x, y+1); //up
       solve(x+1, y); //right
       solve(x, y-1); //down
