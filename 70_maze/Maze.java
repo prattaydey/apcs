@@ -2,7 +2,7 @@
 // APCS pd08
 // HW70 -- Thinkers of the Corn
 // 2022-03-04F
-// time spent: ___ hrs
+// time spent: 1.0 hrs
 
 /***
  * SKEELTON for
@@ -22,9 +22,14 @@
  * Repeat till at exit.
  *
  * DISCO
- *
+ * The math.random has to relate to the x and y height and widths.
+ * No matter how big the maze, the algo will always work.
+ * The hardest maze has the most paths in terms of the computer solving it.
+
  * QCC
- *
+ * What if there were no walls?
+ * How would a maze with only one path look like?
+ * Why won't the hero deploy when we wrote a method to deploy the hero at X Y?
  ***/
 
 //enable file I/O
@@ -37,7 +42,7 @@ class MazeSolver
   final private int FRAME_DELAY = 50;
 
   private char[][] _maze;
-  private int h, w; // height, width of maze
+  public int h, w; // height, width of maze
   private boolean _solved;
 
   //~~~~~~~~~~~~~  L E G E N D  ~~~~~~~~~~~~~
@@ -134,22 +139,22 @@ finds maze exit (depth-first)
     //primary base case
     if (_maze[x][y] == (EXIT) ) {
       _solved = true;
-      return;
+      System.exit(0);
     }
     //other base cases
-    else if (_maze[x][y] == (WALL) ) { // if you run into a wall, you know you cannot continue forward. Return null
+    else if (!onPath(x,y) ) { // if you run into a wall, you know you cannot continue forward. Return null
       return;
     }
     //otherwise, recursively solve maze from next pos over,
     //after marking current location
     else {
       _maze[x][y] = (HERO);
+      System.out.println( this ); //refresh screen
       // try every move in clockwise motion
       solve(x, y+1); //up
       solve(x+1, y); //right
       solve(x, y-1); //down
       solve(x-1, y); //left
-      System.out.println( this ); //refresh screen
 
       _maze[x][y] = (VISITED_PATH);
       System.out.println( this ); //refresh screen
@@ -189,11 +194,15 @@ public class Maze
 
     //drop hero into the maze (coords must be on path)
     // ThinkerTODO: comment next line out when ready to randomize startpos
-    ms.solve( 4, 3 );
+    // ms.solve( 4, 3 );
 
     //drop our hero into maze at random location on path
     // YOUR RANDOM-POSITION-GENERATOR CODE HERE
-    //ms.solve( startX, startY );
+
+   int startX = (int)(Math.random()*ms.w);
+	 int startY = (int)(Math.random()*ms.h);
+
+	 ms.solve( startX, startY );
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }//end main()
