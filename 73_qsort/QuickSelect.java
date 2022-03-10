@@ -10,7 +10,9 @@ ALGO:
 - We reduce the search space until it reaches the base case.
 - The base case is if the pivot is equal to the yth smallest number.
 - Then return, the value of the array at pivot index
+
 BEST CASE SCENARIO: If array is already sorted in ascending order, just return array[y]. We would need to iterate only once through the array, so it would be O(n).
+
 WORST CASE SCENARIO: Having to iterate through the entire array before reaching the yth smallest number, which would be O(n) * O(n), or O(n^2)
 DISCOS:
 - Fast select was similar to Binary Search in that it narrows the search space until you reach the desired target
