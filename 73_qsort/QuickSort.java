@@ -8,11 +8,11 @@
 /***
  * class QuickSort
  * Implements quicksort algo to sort an array of ints in place
- *
+
  * 1. Summary of QuickSort algorithm:
 	Partition array, then partition the stuff to the right and the stuff to the left
  * QSort(arr): calls on helper which has parameters to do partitioning
- * 
+ 
  * 2a. Worst pivot choice and associated run time:
  *     Worst choice is choosing extreme pivot
        Means having to interate thru the whole thing meaning O(n^2)
