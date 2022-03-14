@@ -90,14 +90,10 @@ public class LLNode
     //A: The node it just left is no longer assigned to first, as seen when you print the value of first after moving to each next node
 
     //...so better: ?
-    String _cargo = first.getCargo();
-    LLNode _node = first.getNext();
-    System.out.println(_cargo);
-
-    while( _node != null ){
-      _cargo = _node.getCargo(); // stores current CAR
-      System.out.println(_cargo); // prints current CAR
-      _node = _node.getNext(); // increments to next node
+    LLNode temp = first;
+    while ( temp != null ){
+      System.out.println(temp);
+      temp = temp.getNext();
     }
 
   }//end main
