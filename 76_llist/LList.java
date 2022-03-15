@@ -71,7 +71,7 @@ public class LList implements List //interface def must be in this dir
       temp = temp.getNext();
     }
 
-    return temp.setCargo(newVal); // returns old value of cargo
+    return temp.setCargo(newVal); 
   }
 
 
