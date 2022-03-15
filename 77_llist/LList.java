@@ -19,9 +19,9 @@ public class LList implements List //interface def must be in this dir
   private int _size;
 
   // constructor -- initializes instance vars
-  public LList( )
+  public LList()
   {
-    _head = null; //at birth, a list has no elements
+    _head = new LLNode(null,null); //at birth, a list has no elements
     _size = 0;
   }
 
@@ -30,10 +30,52 @@ public class LList implements List //interface def must be in this dir
 
   public boolean add( String newVal )
   {
-    LLNode tmp = new LLNode( newVal, _head );
-    _head = tmp;
-    _size++;
+    LLNode temp = _head;
+    // if node is empty, simply put the cargo there
+    if (temp.getCargo() == null){
+      temp.setCargo(newVal);
+      _size++;
+    }
+    // else traverse the LL until you reach the end, append a new node with newVal as its cargo
+    else{
+      for (int i = 1; i < size(); i++){
+        temp = temp.getNext();
+      }
+      temp.setNext(new LLNode(newVal, null));
+      _size++;
+    }
     return true;
+  }
+
+
+  public void add(int index,String newVal){
+    if ( index < 0 || index >= size() )
+      throw new IndexOutOfBoundsException();
+
+    LLNode tmp = _head;
+    _size++;
+
+    // adds every value before index to the new LL
+    for ( int i = 0; i < index; i++){
+      tmp.setCargo(_head.getCargo());
+      _head.getNext();
+      tmp.getNext();
+    }
+
+    tmp.setCargo(newVal); // adds newValue itself
+    tmp.getNext();
+
+    // adds every value after index, shifted 1 right from its original pos in _head
+    for (  int i = index + 1; i < _size; i++ ){
+      tmp.setCargo(_head.getCargo());
+      _head.getNext();
+      tmp.getNext();
+    }
+  }
+
+
+  public String remove( int index ){
+    return "0";
   }
 
 
@@ -97,36 +139,44 @@ public class LList implements List //interface def must be in this dir
   }
 
 
+
   //main method for testing
   public static void main( String[] args )
   {
     LList james = new LList();
 
-    System.out.println( james );
-    System.out.println( "size: " + james.size() );
+    //System.out.println( james );
+    //System.out.println( "size: " + james.size() );
 
     james.add("beat");
-    System.out.println( james );
-    System.out.println( "size: " + james.size() );
+    //System.out.println( james );
+    //System.out.println( "size: " + james.size() );
 
     james.add("a");
-    System.out.println( james );
-    System.out.println( "size: " + james.size() );
+    //System.out.println( james );
+    //System.out.println( "size: " + james.size() );
 
     james.add("need");
-    System.out.println( james );
-    System.out.println( "size: " + james.size() );
+    //System.out.println( james );
+    //System.out.println( "size: " + james.size() );
 
     james.add("I");
-    System.out.println( james );
-    System.out.println( "size: " + james.size() );
+    //System.out.println( james );
+    //System.out.println( "size: " + james.size() );
 
-    System.out.println( "2nd item is: " + james.get(1) );
+    //System.out.println( "2nd item is: " + james.get(1) );
 
     james.set( 1, "got" );
-    System.out.println( "...and now 2nd item is: " + james.set(1,"got") );
+    //System.out.println( "...and now 2nd item is: " + james.set(1,"got") );
 
     System.out.println( james );
+
+    james.add(3,"want");
+    System.out.println( james );
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
   }
 
 }//end class LList
