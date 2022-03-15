@@ -78,16 +78,7 @@ public class LList implements List //interface def must be in this dir
   //return number of nodes in list
   public int size()
   {
-    LLNode temp = _head;
-    int len = 0;
-    while ( temp.getCargo() != null){ // checks to see if there is items in the LL
-      len++;
-      if (temp.getNext() != null){ // checks to see if we can keep going
-        temp = temp.getNext();
-      }
-      else{ break; } // breaks if node is pointing to null
-    }
-    return len;
+    return _size;
   }
 
   //--------------^  List interface methods  ^--------------
