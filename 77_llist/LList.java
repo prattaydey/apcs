@@ -1,8 +1,9 @@
-// Clyde Sinclair
-// APCS pd0
-// HW76 -- implement linked list
-// 2022-03-14m
-// time spent:  hrs
+// Team McDonalds$24MScam: Prattay Dey, Joshua Gao, Faiza Huda
+// Ducks : Winnie, Batman, Truthful Tom, Huebert
+// APCS pd08
+// HW77 -- Insert & Remove
+// 2022-03-15
+// time spent: ____ hrs
 
 
 /***
