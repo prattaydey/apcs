@@ -11,21 +11,28 @@
  * Stores its data as a String
  **/
 
-public class LLNode
+public class DLLNode
 {
   //instance vars
+  private DLLNode _prevNode;
   private String _cargo;
-  private LLNode _nextNode;
+  private DLLNode _nextNode;
 
   // constructor
-  public LLNode( String value, LLNode next )
+  public LLNode( DLLNode prev, String value, DLLNode next )
   {
+    _prevNode = prev;
     _cargo = value;
     _nextNode = next;
   }
 
 
   //--------------v  ACCESSORS  v--------------
+  public LLNode getPrev()
+  {
+    return _prevNode;
+  }
+
   public String getCargo()
   {
     return _cargo;
@@ -39,6 +46,14 @@ public class LLNode
 
 
   //--------------v  MUTATORS  v--------------
+  public DLLNode setPrev( dLLNode newPrev )
+  {
+    LLNode foo = getPrev();
+    _prevNode = newPrev;
+    return foo;
+  }
+
+
   public String setCargo( String newCargo )
   {
     String foo = getCargo();
@@ -46,7 +61,7 @@ public class LLNode
     return foo;
   }
 
-  public LLNode setNext( LLNode newNext )
+  public DLLNode setNext( DLLNode newNext )
   {
     LLNode foo = getNext();
     _nextNode = newNext;
