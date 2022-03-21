@@ -51,6 +51,15 @@ public class DeckTester {
 		System.out.println();
 		System.out.println();
 
-		/* *** TO BE COMPLETED IN ACTIVITY 4 *** */
+
+
+		String[] nRanks = {"Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"};
+		String[] nSuits = {"Clubs", "Spades", "Diamonds", "Hearts"};
+		int[] nVals = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
+
+		Deck nDeck = new Deck(nRanks, nSuits, nVals);
+		System.out.println(nDeck);
+		nDeck.shuffle();
+		System.out.println(nDeck);
 	}
 }
