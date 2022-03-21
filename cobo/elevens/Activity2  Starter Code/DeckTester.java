@@ -8,6 +8,28 @@ public class DeckTester {
 	 *	@param args is not used.
 	 */
 	public static void main(String[] args) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		String [] ranks = {"junior", "senior"};
+		String [] suits = {"blue", "red"};
+		int[] pointValues = {11, 12};
+
+
+		Deck Kartik = new Deck(ranks, suits, pointValues);
+		Deck Nafiz = new Deck(ranks, suits, pointValues);
+		Deck Prattay = new Deck(ranks, suits, pointValues);
+
+		System.out.println(Kartik.isEmpty());
+		System.out.println(Prattay.isEmpty());
+
+		System.out.println(Nafiz.size());
+
+		System.out.println("Deal: " + Nafiz.deal());
+		System.out.println("After Deal: " + Nafiz.toString());
+		System.out.println(Nafiz.size());
+
+		Nafiz.deal();
+		Nafiz.deal();
+		Nafiz.deal();
+		System.out.println("\n" + Nafiz.deal());
+
 	}
 }
