@@ -1,0 +1,27 @@
+Team Pink (Prattay Dey, Nafiz Labib, Kartik Vanjani)
+APCS pd08
+L07 - But These Go Up To Eleven
+2022-03-22
+
+--------Activity 2--------
+1. A deck is an ArrayList that can contain data of the object type card.
+2. There would be six cards, because you multiply the number of suits with the number of ranks to get the possible amount of unique cards.
+3.
+    String[] ranks = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king", "ace"}
+    String[] suits = {"diamonds", "clubs", "hearts", "spades"}
+    int[] pointValues = {2,3,4,5,6,7,8,9,10,11}
+4. They do matter, based on the method we used for creating cards, which was looping through the arrays at the same index.
+That means that ranks in the beginning should correspond to their value. For example, 2 in the beginning gets a value of 2, while a ace in the end gets a value of 11.
+
+--------Activity 3--------
+1.
+  public static String flip() {
+    if ((int) Math.random() * 3 > 1){
+    return "heads";
+    }
+    else{
+    return "tails";
+    }
+  }
+  1, 2, or 3 is generated. If it's 1, it's tails, otherwise, it's heads.
+2.
