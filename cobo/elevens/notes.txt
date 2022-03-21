@@ -2,6 +2,7 @@ Team Pink (Prattay Dey, Nafiz Labib, Kartik Vanjani)
 APCS pd08
 L07 - But These Go Up To Eleven
 2022-03-22
+time spent: 1.0 hours
 
 --------Activity 2--------
 1. A deck is an ArrayList that can contain data of the object type card.
