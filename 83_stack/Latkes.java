@@ -1,3 +1,11 @@
+// Team McDonalds$24MScam : Prattay Dey, Joshua Gao, Faiza Huda
+// Ducks : Winnie, Batman, Truthful Tom, Huebert
+// APCS pd08
+// HW83 -- Stacks on Stacks
+// 2022-03-28
+// time spent: .5 hrs
+
+
 /***
  * class Latkes
  * v1
@@ -7,8 +15,12 @@
 
 /***
     DISCO
+    - Similar to the plate dispenser analogy, the most recently washed plates would be at the top. In this case, the most recently added elements would be at the end.
+      That is why we defined the "top" as the end of the stack.
 
     QCC
+    - When would we use stacks over other array/list types?
+      The fact that we can only push to the end of the stack seems inconvenient compared to something such as ArrayLists, where we can add at index.
 
  **/
 
@@ -30,52 +42,47 @@ public class Latkes
   //means of insertion
   public void push( String s )
   {
+    if ( !isFull() ){
+      _stack[_stackSize] = s;
+      _stackSize++;
+    }
 
-  }// O(?)
+
+  }// O(1)
 
 
   //means of removal
   public String pop( )
   {
-    /* your
-       SIMPLE
-       SMART
-       magicks
-       here
-    */
-  }// O(?)
+    if ( !isEmpty() ){
+      String temp = _stack[_stackSize - 1];
+      _stack[_stackSize - 1] = null;
+      _stackSize--;
+      return temp;
+    }
+    return null;
+  }// O(1)
 
 
   //chk for emptiness
   public boolean isEmpty()
   {
-    /* your
-       SIMPLE
-       SMART
-       magicks
-       here
-    */
-  }// O(?)
+    return _stackSize == 0;
+  }// O(1)
 
 
   //chk for fullness
   public boolean isFull()
   {
-    /* your
-       SIMPLE
-       SMART
-       magicks
-       here
-    */
-  }// O(?)
+    return _stackSize == _stack.length;
+  }// O(1)
 
 
   //main method for testing
   public static void main( String[] args )
   {
-    /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
 
-    Latkes tastyStack = new Latkes(10);
+    Latkes tastyStack = new Latkes(12); // originally 10, fixed to 12 to account for all pushes
 
     tastyStack.push("aoo");
     tastyStack.push("boo");
@@ -117,6 +124,7 @@ public class Latkes
 
     //stack empty by now; SOP(null)
     System.out.println( tastyStack.pop() );
+    /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
       ^~~~~~~~~~~~~~~~AWESOME~~~~~~~~~~~~~~~^*/
 
   }//end main()
