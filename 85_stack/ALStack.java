@@ -1,17 +1,3 @@
-// Team McDonalds$24MScam : Prattay Dey, Joshua Gao, Faiza Huda
-// Ducks : Winnie, Batman, Truthful Tom, Huebert
-// APCS pd08
-// HW83 -- Stacks on Stacks
-// 2022-03-28
-// time spent: .5 hrs
-
-
-/***
- * class Latkes
- * v1
- * SKELETON
- * Implements a stack of Strings using an encapsulated array
- **/
 
 /***
     DISCO
@@ -24,43 +10,49 @@
 
  **/
 
+import java.util.ArrayList;
 
-public class Latkes
+public class ALStack<T>
 {
-  private String [] _stack;
+  private ArrayList<T> _stack;
   private int _stackSize;
 
 
   //constructor
-  public Latkes( int initCapacity )
+  public ALStack( int initCapacity )
   {
-    _stack = new String[initCapacity];
+    _stack = new ArrayList<T>();
     _stackSize = 0;
   }// O(1)
 
 
   //means of insertion
-  public void push( String s )
+  public void push( T s )
   {
     if ( !isFull() ){
-      _stack[_stackSize] = s;
+      _stack.add(s);
       _stackSize++;
     }
-
-
   }// O(1)
 
 
   //means of removal
-  public String pop( )
+  public T pop( )
   {
     if ( !isEmpty() ){
       _stackSize--;
-      return _stack[_stackSize];
+      return _stack.get(_stackSize);
     }
     return null;
   }// O(1)
 
+
+  public T peekTop(){ // returns the top of the stack
+    if ( !isEmpty() ){
+      return _stack[_stackSize - 1];
+    }
+    return null;
+  }
 
   //chk for emptiness
   public boolean isEmpty()
@@ -80,7 +72,7 @@ public class Latkes
   public static void main( String[] args )
   {
 
-    Latkes tastyStack = new Latkes(12); // originally 10, fixed to 12 to account for all pushes
+    ALStack tastyStack = new ALStack(12); // originally 10, fixed to 12 to account for all pushes
 
     tastyStack.push("aoo");
     tastyStack.push("boo");
