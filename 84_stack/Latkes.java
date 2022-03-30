@@ -1,8 +1,8 @@
 // Team McDonalds$24MScam : Prattay Dey, Joshua Gao, Faiza Huda
 // Ducks : Winnie, Batman, Truthful Tom, Huebert
 // APCS pd08
-// HW83 -- Stacks on Stacks
-// 2022-03-28
+// HW84 -- Stack: What is it Good For
+// 2022-03-29
 // time spent: .5 hrs
 
 
@@ -46,8 +46,6 @@ public class Latkes
       _stack[_stackSize] = s;
       _stackSize++;
     }
-
-
   }// O(1)
 
 
@@ -63,6 +61,13 @@ public class Latkes
     return null;
   }// O(1)
 
+
+  public String peek(){ // returns the top of the stack
+    if ( !isEmpty() ){
+      return _stack[_stackSize - 1];
+    }
+    return null;
+  }
 
   //chk for emptiness
   public boolean isEmpty()
