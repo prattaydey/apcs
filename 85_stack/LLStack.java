@@ -1,70 +1,59 @@
-// Team McDonalds$24MScam : Prattay Dey, Joshua Gao, Faiza Huda
+// Team 2ndAve : Prattay Dey, Joshua Gao, Faiza Huda
 // Ducks : Winnie, Batman, Truthful Tom, Huebert
 // APCS pd08
-// HW84 -- Stack: What is it Good For
-// 2022-03-29
-// time spent: .5 hrs
-
-
-/***
- * class Latkes
- * v1
- * SKELETON
- * Implements a stack of Strings using an encapsulated array
- **/
+// HW85 -- Leon Leonwood Stack
+// 2022-03-30
+// time spent: 1.0 hrs
 
 /***
     DISCO
-    - Similar to the plate dispenser analogy, the most recently washed plates would be at the top. In this case, the most recently added elements would be at the end.
-      That is why we defined the "top" as the end of the stack.
+    - We no longer need an isFull() method as an ArrayList and LinkedList do not have a set size.
+    - Once again all the methods are still running in constant time O(1)
 
     QCC
-    - When would we use stacks over other array/list types?
-      The fact that we can only push to the end of the stack seems inconvenient compared to something such as ArrayLists, where we can add at index.
+    - Which is better ALStack or LLStack?
+    Since they both have the same runtime complexity, would it be the same?
 
  **/
 
+import java.util.LinkedList;
 
-public class Latkes
+public class LLStack<T> implements Stack<T>
 {
-  private String [] _stack;
+  private LinkedList<T> _stack;
   private int _stackSize;
 
 
   //constructor
-  public Latkes( int initCapacity )
+  public LLStack()
   {
-    _stack = new String[initCapacity];
+    _stack = new LinkedList<T>();
     _stackSize = 0;
   }// O(1)
 
 
   //means of insertion
-  public void push( String s )
+  public void push( T s )
   {
-    if ( !isFull() ){
-      _stack[_stackSize] = s;
-      _stackSize++;
-    }
+    _stack.add(s);
+    _stackSize++;
   }// O(1)
 
 
   //means of removal
-  public String pop( )
+  public T pop( )
   {
     if ( !isEmpty() ){
-      // String temp = _stack[_stackSize - 1];
-      // _stack[_stackSize - 1] = null;
       _stackSize--;
-      return _stack[_stackSize];
+      return _stack.get(_stackSize);
     }
     return null;
   }// O(1)
 
 
-  public String peek(){ // returns the top of the stack
+  public T peekTop(){ // returns the top of the stack
     if ( !isEmpty() ){
-      return _stack[_stackSize - 1];
+      return _stack.get(_stackSize - 1);
     }
     return null;
   }
@@ -75,63 +64,4 @@ public class Latkes
     return _stackSize == 0;
   }// O(1)
 
-
-  //chk for fullness
-  public boolean isFull()
-  {
-    return _stackSize == _stack.length;
-  }// O(1)
-
-
-  //main method for testing
-  public static void main( String[] args )
-  {
-
-    Latkes tastyStack = new Latkes(12); // originally 10, fixed to 12 to account for all pushes
-
-    tastyStack.push("aoo");
-    tastyStack.push("boo");
-    tastyStack.push("coo");
-    tastyStack.push("doo");
-    tastyStack.push("eoo");
-    tastyStack.push("foo");
-    tastyStack.push("goo");
-    tastyStack.push("hoo");
-    tastyStack.push("ioo");
-    tastyStack.push("joo");
-    tastyStack.push("coocoo");
-    tastyStack.push("cachoo");
-
-    //cachoo
-    System.out.println( tastyStack.pop() );
-    //coocoo
-    System.out.println( tastyStack.pop() );
-    //joo
-    System.out.println( tastyStack.pop() );
-    //ioo
-    System.out.println( tastyStack.pop() );
-    //hoo
-    System.out.println( tastyStack.pop() );
-    //goo
-    System.out.println( tastyStack.pop() );
-    //foo
-    System.out.println( tastyStack.pop() );
-    //eoo
-    System.out.println( tastyStack.pop() );
-    //doo
-    System.out.println( tastyStack.pop() );
-    //coo
-    System.out.println( tastyStack.pop() );
-    //boo
-    System.out.println( tastyStack.pop() );
-    //aoo
-    System.out.println( tastyStack.pop() );
-
-    //stack empty by now; SOP(null)
-    System.out.println( tastyStack.pop() );
-    /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
-      ^~~~~~~~~~~~~~~~AWESOME~~~~~~~~~~~~~~~^*/
-
-  }//end main()
-
-}//end class Latkes
+}//end class LLStack
