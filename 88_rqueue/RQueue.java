@@ -1,3 +1,18 @@
+// Team Spanish Inquisition : Prattay Dey, Joshua Gao, Faiza Huda
+// Ducks : Winnie, Batman, Truthful Tom, Huebert
+// APCS pd08
+// HW88 -- BPC Kiddies Do Not Wait in Line Either
+// 2022-04-04
+// time spent: 1.0 hr
+
+/*
+  DISCOS:
+  - We can set two variables equal to the same value on one line
+  - We can shuffle the queue by randomly dequeuing a node, and then enqueuing it back at the front and repeating this for entire queue.
+
+  QCCs:
+  - Is there an implementation of sample() that has a better runtime than O(n^2)?
+  
 /***
  * class RQueue
  * SKELETON
@@ -32,33 +47,64 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
 
   public void enqueue( SWASHBUCKLE enQVal )
   {
+    LLNode<SWASHBUCKLE> tmp = new LLNode(enQVal, null);
+    if (_size == 0){
+      _front = _end = tmp;
+    }
+    else{
+      _end.setNext( tmp );
+      _end = tmp;
+    }
+    _size++;
 
-  }//O(?)
+  }//O(1)
 
 
   // remove and return thing at front of queue
   // assume _queue ! empty
   public SWASHBUCKLE dequeue()
   {
+    SWASHBUCKLE retVal;
+    if (_size == 1){
+      retVal = _front.getCargo();
+      _front = _end = null;
+    }
 
-  }//O(?)
+    else{
+      int random = (int) ( Math.random() * _size); // random node within the Queue
+      LLNode<SWASHBUCKLE> tmp = _front;
+      for (int i = 0; i < random - 1; i++){
+        tmp = tmp.getNext();
+      }
+
+      retVal = tmp.getNext().getCargo();
+      tmp.setNext( tmp.getNext().getNext() );
+      _size--;
+
+    }
+    return retVal;
+  }//O(n)
 
 
   public SWASHBUCKLE peekFront()
   {
-
-  }//O(?)
+    return _front.getCargo();
+  }//O(1)
 
 
   /***
    * void sample() -- a means of "shuffling" the queue
    * Algo:
-   *   < YOUR SUCCINCT SUMMARY HERE >
+   *   Dequeue a random node using Math.random()
+       Take that return value, and requeue it at the front
+       Do this _size - 1 times to ensure all nodes have been addressed
    **/
-  public void sample ()
+  public void sample()
   {
-
-  }//O(?)
+    for (int i = 0; i < _size; i++){
+      this.enqueue( this.dequeue() );
+    }
+  }//O(n^2)
 
 
   public boolean isEmpty()
@@ -70,16 +116,64 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
   // print each node, separated by spaces
   public String toString()
   {
-
+    LLNode<SWASHBUCKLE> tmp = _front;
+    String result = "FRONT --> ";
+    for (int i = 0; i < _size; i++){
+      result += tmp.getCargo() + " ";
+      tmp = tmp.getNext();
+    }
+    result += "<-- END";
+    return result;
   }//end toString()
 
+  public class LLNode<SWASHBUCKLE>
+  {
+    //instance vars
+    private SWASHBUCKLE cargo;
+    private LLNode<SWASHBUCKLE> node;
+
+    // constructor
+    public LLNode( SWASHBUCKLE value, LLNode<SWASHBUCKLE> next )
+    {
+      cargo = value;
+      node = next;
+    }
+
+
+    //--------------v  ACCESSORS  v--------------
+    public SWASHBUCKLE getCargo()
+    {
+      return cargo;
+    }
+
+    public LLNode<SWASHBUCKLE> getNext()
+    {
+      return node;
+    }
+    //--------------^  ACCESSORS  ^--------------
+
+
+    //--------------v  MUTATORS  v--------------
+    public SWASHBUCKLE setCargo( SWASHBUCKLE newCargo )
+    {
+      SWASHBUCKLE temp = cargo;
+      cargo = newCargo;
+      return temp;
+    }
+
+    public LLNode setNext( LLNode<SWASHBUCKLE> newNext )
+    {
+      LLNode<SWASHBUCKLE> temp = node;
+      node = newNext;
+      return temp;
+    }
+  }
 
 
   //main method for testing
   public static void main( String[] args )
   {
 
-      /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
 
     Queue<String> PirateQueue = new RQueue<String>();
 
@@ -105,9 +199,11 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
     System.out.println("\nnow dequeuing fr empty queue...\n" +
                        "(expect NPE)\n");
     System.out.println( PirateQueue.dequeue() );
+    /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
 
       ^~~~~~~~~~~~~~~~AWESOME~~~~~~~~~~~~~~~^*/
 
   }//end main
+
 
 }//end class RQueue
