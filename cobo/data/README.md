@@ -1,6 +1,6 @@
 **Team Mamba :: Nafiz Labib, Prattay Dey, Kartik Vanjani**
 
-* Experience:
+Experience:
 - A lot of the activities such as Cereal.java were a drag because of the amount of instance variables and accessor methods. 
 - It was interesting to use the sinbad library, once we figured out how to compile and run a driver file with it.
 
