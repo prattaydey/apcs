@@ -1,24 +1,16 @@
-Team Phantom Tollbooth :: Clyde Sinclair, Fierce Dragon
+Team Mamba :: Nafiz Labib, Prattay Dey, Kartik Vanjani
 APCS
-LAB08 --
+Lab 08 - America's Next Top Data Scientist
 2022-04-05
-time spent: <elapsed time in hours, rounded to nearest tenth>
-
-
-ACTIVITY 3:
-The temperature at Atlanta, Hartsfield - Jackson Atlanta International Airport, GA is 69.0F
-
-Code: KLGA
-
-The temperature at New York, La Guardia Airport, NY is 50.0F
+time spent: 3.0 hr
 
 
 DISCO
-
+- Can get past .gitignore file using git add -f.
+- sinbad.jar is a library that allows you to connect, read, and process data.  
 
 QCC
-
-
+- 
 
 
 <TNPG>'s CSV FLOW:
@@ -26,4 +18,43 @@ QCC
 
 
 TRUBZ
-<this lab involves using tools that are likely to introduce hiccups; log any troubleshooting issues here>
+- Had trouble connecting Welcome01 to sinbad library. Remembered that our .gitignore file automatically ignores .jar file when cloning folder from closet/library.   
+
+------------Activity 1------------
+1. Netflix, Amazon, Google
+2. Google: Personal information like name and provided photo, information about browsers we visit, search terms we input into Google
+3. Delimit means "to fix or define the limits of". In data files, it's necessary because it allows us to incorporate as much data as we need.
+4. Most of the time, data in a column has some sort of a header to label what the column contains. You can also compare data within a column as find similarities to figure out what data is contained.
+5. Basketball and American football
+6.
+   Initial Consideration:
+   Question 1: Who is the GOAT (greatest of all time) of basketball?
+   Question 2: Who is the best running back currently in the NFL?
+
+   After Discussion:
+   Question 1: Which basketball player has contributed the most to the sport?
+   Question 2: Who is the greatest offensive player in football?
+ 7.
+ 
+ 
+ 
+ 
+ ------------Activity 3------------
+1) The temperature at Atlanta, Hartsfield - Jackson Atlanta International Airport, GA is 69.0F
+
+2) Code: KLGA
+  The temperature at New York, La Guardia Airport, NY is 50.0F
+  
+4) 2876 weather stations in NY
+   
+5) You can sort the weather stations by their latitude.
+
+6) The southernmost station was Pago Pago, AS, Samoa.
+
+7) One question we can also answer is the northernmost weather station. 
+
+8) We can answer this in the same amount of code it took us to find the southernmost station. 
+
+
+
+
