@@ -1,3 +1,9 @@
+//Team Mamba :: Nafiz Labib, Prattay Dey, Kartik Vanjani
+//APCS
+//Lab 08 - America's Next Top Data Scientist
+//2022-04-05
+//time spent: 3.0 hr
+
 /*
  Represents information about a NWS weather station
 */
