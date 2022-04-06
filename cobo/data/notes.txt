@@ -5,10 +5,20 @@ LAB08 --
 time spent: <elapsed time in hours, rounded to nearest tenth>
 
 
+ACTIVITY 3:
+The temperature at Atlanta, Hartsfield - Jackson Atlanta International Airport, GA is 69.0F
+
+Code: KLGA
+
+The temperature at New York, La Guardia Airport, NY is 50.0F
+
+
 DISCO
 
 
 QCC
+
+
 
 
 <TNPG>'s CSV FLOW:
