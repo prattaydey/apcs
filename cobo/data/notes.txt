@@ -1,6 +1,6 @@
 Team Phantom Tollbooth :: Clyde Sinclair, Fierce Dragon
 APCS
-LAB08 --
+LAB08 -- DATA
 2022-04-05
 time spent: <elapsed time in hours, rounded to nearest tenth>
 
