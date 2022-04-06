@@ -7,10 +7,12 @@ time spent: 3.0 hr
 
 DISCO
 - Can get past .gitignore file using git add -f.
-- sinbad.jar is a library that allows you to connect, read, and process data.  
+- sinbad.jar is a library that allows you to connect, read, and process data.
+- Google recieves a combination of the information we give and the information they get based on the things we do on their engines.
 
 QCC
-- 
+- Can sinbad process a variety of data from different websites or is it only limited to this activity?
+- Are there any other libraries similar to sinbad, and why the name?
 
 
 <TNPG>'s CSV FLOW:
