@@ -15,7 +15,7 @@ QCC
 - Are there any other libraries similar to sinbad, and why the name?
 
 
-<TNPG>'s CSV FLOW:
+<Team Mamba's CSV FLOW:
 <insert your description of your tools and workflow in creating, editing CSV files>
 
 
@@ -38,7 +38,15 @@ TRUBZ
    Question 2: Who is the greatest offensive player in football?
  7.
  
+ ------------Activity 2------------
+ 1. Best name for the object would be Cereal.
+ 2. N/A
+ 3. public class Cereal{}
+ 4. We will create an instance variable for each column nof the table. 
  
+ 8. One additional question that we can answer without modifying code is the type of each individual cereal.
+ 9. One additional question that we cannot answer with our current implementation of java is which cereal has the most calories. 
+ 10. Create a double list of every cereal's calories, and then iterate over it to find the max value.  
  
  
  ------------Activity 3------------
