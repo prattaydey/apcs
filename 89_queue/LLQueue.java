@@ -13,7 +13,7 @@
 
   QCCs:
   - Is there a way to have both enqueue and dequeue for ALQueue to run on constant time?
-  - What is the difference betweem getFirst() and peekFirst() for Linked List fucntionality? They seem to do the same purpose in the Oracle docs.
+  - What is the difference between getFirst() and peekFirst() for Linked List fucntionality? They seem to do the same purpose in the Oracle docs.
 */
 
 import java.util.LinkedList;
