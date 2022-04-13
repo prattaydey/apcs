@@ -1,4 +1,4 @@
-# Team Spanish Inquisition's Deque
+# Team Spanish Inquisition
 ## Prattay Dey, Joshua Gao, Faiza Huda
 
 ### To-Do List
