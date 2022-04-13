@@ -1,6 +1,13 @@
 # Team Spanish Inquisition's Deque
 ## Prattay Dey, Joshua Gao, Faiza Huda
 
+### To-Do List
+- Finalize interface and which versions of add and remove method we want to use.
+- Start implementation, as simple as possible by using pass-thru functionality wherever we can.
+- Update notes.txt w/ Discos and QCCs as we go.
+- Update readme when finished.
+
+
 ## Interface with generic type <E>
 ### Add Methods
 `public void addFirst(E e)` - adds e to the front, throws exception if no space available <br>
@@ -21,8 +28,3 @@
 `public boolean isEmpty()` - returns true if Deque is empty, false otherwise <br>
 `public int size()` - returns number of elements in the Deque <br>
 
-### To-Do List
-- Finalize interface and which versions of add and remove method we want to use.
-- Start implementation, as simple as possible by using pass-thru functionality wherever we can.
-- Update notes.txt w/ Discos and QCCs as we go.
-- Update readme when finished.
