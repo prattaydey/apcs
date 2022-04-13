@@ -1,4 +1,4 @@
-# Team Spanish Inquisition
+# THE SPANISH INQUISITION
 ## Prattay Dey, Joshua Gao, Faiza Huda
 
 ### To-Do List
@@ -6,6 +6,9 @@
 - Start implementation, as simple as possible by using pass-thru functionality wherever we can.
 - Update notes.txt w/ Discos and QCCs as we go.
 - Update readme when finished.
+
+### Design Decisions
+- We decided to do use LinkedList over ArrayList because LinkedLIst already implements Deque, so that makes pass-thru functionality easier.
 
 
 ## Interface with generic type <E>
@@ -27,4 +30,3 @@
 ### Other Methods
 `public boolean isEmpty()` - returns true if Deque is empty, false otherwise <br>
 `public int size()` - returns number of elements in the Deque <br>
-
