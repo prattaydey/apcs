@@ -1,7 +1,7 @@
 public class MRKPirateBae
 {
   public static void main(String[] args){
-    QQKachoo<Integer> kenny = new QQKachoo<Integer>();
+    Kenny<Integer> kenny = new Kenny<Integer>();
     kenny.addFirst(2);
     kenny.addFirst(4);
     kenny.addLast(4);

@@ -17,12 +17,12 @@ QCCs:
 
 import java.util.LinkedList;
 
-public class QQKachoo<E> implements Deque<E>
+public class Kenny<E> implements Deque<E>
 {
   private LinkedList<E> ll;
 
   // constructor
-  public QQKachoo(){
+  public Kenny(){
     ll = new LinkedList<E>();
   }
 
