@@ -21,7 +21,7 @@ public class CelebrityGame
 	/**
 	 * The ArrayList of Celebrity values that make up the game
 	 */
-	 private ArrayList celebGameList;
+	 private ArrayList<Celebrity> celebGameList;
 	/**
 	 * Builds the game and starts the GUI
 	 */
@@ -51,17 +51,19 @@ public class CelebrityGame
 	public boolean processGuess(String guess)
 	{
 		boolean result = false;
-		if (guess.equalsIgnoreCase( gameCelebrity.getAnswer() ){
+		guess = guess.trim();
+		if (guess.equalsIgnoreCase( gameCelebrity.getAnswer() )){
 			celebGameList.remove(0);
 			result = true;
-		}
 
-		if ( getCelebrityGameSize > 0){
-			gameCelebrity = celebGameList.get(0);
+			if ( getCelebrityGameSize() > 0){
+				gameCelebrity = celebGameList.get(0);
+			}
+			else{
+				gameCelebrity = new Celebrity("", "");
+			}
 		}
-		else{
-			gameCelebrity = new Celebrity("", "");
-		}
+		return result;
 	}
 
 	/**
@@ -90,8 +92,8 @@ public class CelebrityGame
 	 */
 	public void addCelebrity(String name, String guess, String type)
 	{
-
-
+		Celebrity newCelebrity = new Celebrity(name, guess);
+		celebGameList.add(newCelebrity);
 	}
 
 	/**
