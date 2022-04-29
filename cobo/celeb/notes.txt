@@ -1,0 +1,11 @@
+Team Mamba :: Nafiz Labib, Prattay Dey, Kartik Vanjani
+APCS
+Lab 09 - Some Folks Call it a Charades
+2022-04-05
+time spent:
+
+DISCO:
+- There is no GUI that appears when we run CelebrityRunner. 
+
+QCC:
+- For the play method, why do we have to check if the arrayList is not null AND if the size is greater than 0? They seem to serve the same purpose. 
