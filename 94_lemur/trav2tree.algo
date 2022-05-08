@@ -1,9 +1,8 @@
-Teh Tree Stooges :: Mo, Lairree, curl
-APCS pd0
+Mamba  :: Prattay Dey, Nafiz Labib, Kartik Varjani
+APCS pd08
 HW94 -- reverse engineering
-2022-05-06f
-time spent:  hrs
-
+2022-05-09m
+time spent: 0.5 hrs
 
 DISCO
 ------------------------------------------------
@@ -20,37 +19,39 @@ QCC
 HOW KEEN ARE YOUR POWERS OF OBSERVATION?
 ------------------------------------------------
 Q: For a given binary tree, how many unique pre-order traversals are there?
-A: 
+A: One
 
 Q: For a given binary tree, how many unique in-order traversals are there?
-A: 
+A: One
 
 Q: For a given binary tree, how many unique post-order traversals are there?
-A: 
+A: One
 
 Q: For a given traversal, how many unique trees could have produced it?
-A: 
+A: An infinite number of trees can be produced from only one transversal, with no other information given about it. 
 
 Q: Given a pre-order traversal, what can you infer about its tree?
-A: 
+A: The first node is the root node
 
 Q: Given a post-order traversal, what can you infer about its tree?
-A: 
+A: The last node is the root node. 
 
 Q: What does "1-to-1" mean?
-A: 
+A: There is a linear relationship between 2 things.
 
 Q: What does "onto" mean?
-A: 
+A: Our group was not sure, but TAK on Piazza said that "onto" is in reference to graphs, a function that maps A to B is considered to be "onto" if every element of B corresponds to at least one element of A. This is not the same as one-to-one because in an onto function, multiple elements of A may be mapped to the same element of B.  
 
 ================================================
 
 
-ALGO for ____
+ALGO for PRE-ORDER & IN-ORDER
 ------------------------------------------------
-givens:
+givens: a pre-order and in-order transversal for a binary tree
 
 procedure:
+1. Identify the root node as the first node in the pre-order transversal.
+2. Locate the root node in the in-order transversal, partition to the left and right of it as the subtrees.
 
 ================================================
 (replicate the algo section above as many times as necessary for distinct algos)
