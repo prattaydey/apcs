@@ -1,59 +1,88 @@
-Mamba  :: Prattay Dey, Nafiz Labib, Kartik Varjani
-APCS pd08
-HW94 -- reverse engineering
-2022-05-09m
-time spent: 0.5 hrs
+Team Mamba: Nafiz Labib, Kartik Vanjani, Prattay Dey
+APCS pd8
+HW94 -- Reforestation
+2022-05-07r
+time spent: 1 hrs
+
 
 DISCO
 ------------------------------------------------
-* 
+* Recursion is applied by dividing the overall tree into smaller and smaller subtrees to be filled in.
+* Having trouble with pre/post transversals.
 ================================================
 
 
 QCC
 ------------------------------------------------
-* 
+* Better way for pre and post algo? (at least better than what we have). Like how do we make an algorithm that "detects" whether a child should be left or right? Do we just left-justify (like I did)? How do we accurately assign elements as indices of the subtrees like we did for the other algos?
+* Is this exactly recursion? This isn't really like smallest case. The subtrees do get smaller, but it doesn't really feel like the usual recursion we've done. Don't quite know how to describe it.
 ================================================
 
 
 HOW KEEN ARE YOUR POWERS OF OBSERVATION?
 ------------------------------------------------
 Q: For a given binary tree, how many unique pre-order traversals are there?
-A: One
+A: There should only be one; the order is strict in process itself first, then process left, then process right. It wouldn't lead to any other unique transversals.
 
 Q: For a given binary tree, how many unique in-order traversals are there?
-A: One
+A: There should only be one; the order is strict in process left first, then process itself, then process right. It wouldn't lead to any other unique transversals.
 
 Q: For a given binary tree, how many unique post-order traversals are there?
-A: One
+A: There should only be one; the order is strict in process left first, then process right, then process itself. It wouldn't lead to any other unique transversals.
 
 Q: For a given traversal, how many unique trees could have produced it?
-A: An infinite number of trees can be produced from only one transversal, with no other information given about it. 
+A: 2^(n-1). n-1 because the root can't be changed in any other way, and there are two ways to arrange nodes afterwards in a binary tree. It's base 2 to the power of (n-1) because each node has 2 ways of being arranged.
 
 Q: Given a pre-order traversal, what can you infer about its tree?
-A: The first node is the root node
+A: You can say that the first element is the root and the second element is a child, but not which direction (left/right).
 
 Q: Given a post-order traversal, what can you infer about its tree?
-A: The last node is the root node. 
+A: You can say that the last element is the root and the second to last element is a child, but not which direction (left/right).
 
 Q: What does "1-to-1" mean?
-A: There is a linear relationship between 2 things.
+A: Every element in one set is paired to a unique element in another set not already paired.
 
 Q: What does "onto" mean?
-A: Our group was not sure, but TAK on Piazza said that "onto" is in reference to graphs, a function that maps A to B is considered to be "onto" if every element of B corresponds to at least one element of A. This is not the same as one-to-one because in an onto function, multiple elements of A may be mapped to the same element of B.  
+A: Every element in one set corresponds to another element in another set (credits to Piazza Post @835, Thinker AK)
 
 ================================================
 
 
-ALGO for PRE-ORDER & IN-ORDER
+ALGO for Pre and In Orders
 ------------------------------------------------
-givens: a pre-order and in-order transversal for a binary tree
-
+givens:
+- traversals specified
 procedure:
-1. Identify the root node as the first node in the pre-order transversal.
-2. Locate the root node in the in-order transversal, partition to the left and right of it as the subtrees.
+1. Designate first element in pre-traversal as root.
+2. Find in in-order, divide elements into left and right subtrees
+3. Next element in pre-transversal is designated as root of subtree (go forwards).
+4. Repeat 2-3 for left side, then right side.
+================================================
 
 ================================================
-(replicate the algo section above as many times as necessary for distinct algos)
 
 
+ALGO for In and Post Orders
+------------------------------------------------
+givens:
+- traversals specified
+procedure:
+1. Designate last element in post-traversal as root.
+2. Find in in-order, divide elements into left and right subtrees
+3. Next element in post-transversal is designated as root of subtree (go backwards).
+4. Repeat 2-3 for right side, then left side.
+================================================
+
+================================================
+
+
+ALGO for Pre and Post Orders
+------------------------------------------------
+givens:
+traversals specified
+procedure:
+1. First element in pre should be same as last in post. Designate this element as the root.
+2. Look at pre's next element. This should be placed as the left. Find that element in post, divide everything. place left elements for left subtree, right elements for right subtree.
+3. Repeat 1-2
+(This is a work in progress)
+================================================
