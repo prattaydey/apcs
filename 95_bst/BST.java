@@ -133,6 +133,14 @@ public class BST
       arbol.insert( 6 );
       arbol.insert( 1 );
       arbol.insert( 3 );
+    
+    /*
+      4        4       4         4               4                 4
+             /       /  \      /  \            /  \              /  \        *SKETCHED TREES*
+           2       2     5    2    5          2    5           2     5
+                                    \       /      \         /  \     \
+                                     6     1        6       1   3      6
+    */
 
       System.out.println( "\n-----------------------------");
       System.out.println( "pre-order traversal:" );
