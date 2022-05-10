@@ -1,0 +1,11 @@
+// Team Mamba: Nafiz Labib, Kartik Vanjani, Prattay Dey
+// APCS pd8
+// HW95 -- Algorithm as Data Structure
+// 2022-05-09m
+// time spent: 1 hrs
+
+DISCOS:
+- We can use recursion in helper methods to go down either the right or left subtree depending on the state/info of the current node and the desired transversal.
+
+QCCs:
+- Why do the instance vars and methods in TreeNode have no visibility? How does it still run?
