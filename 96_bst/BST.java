@@ -1,8 +1,8 @@
 // Team Mamba: Nafiz Labib, Kartik Vanjani, Prattay Dey
 // APCS pd8
-// HW95 -- Algorithm as Data Structure
-// 2022-05-09m
-// time spent: 1 hrs
+// HW96 -- BSTs is the Perfect Place for Shade
+// 2022-05-10t
+// time spent: 0.7 hrs
 
 /**
  * class BST
@@ -118,6 +118,81 @@ public class BST
   //~~~~~~~~~~~~~^~~TRAVERSALS~~^~~~~~~~~~~~~~~~~~~~~~
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+  /*****************************************************
+   * TreeNode search(int)
+   * returns pointer to node containing target,
+   * or null if target not found
+   *****************************************************/
+  TreeNode search( int target )
+  {
+    TreeNode tmp = _root;
+    while ( tmp != null){
+      if (tmp.getValue() == target){ return tmp; }
+      else if (tmp.getValue() > target ){
+        tmp = tmp.getLeft();
+      }
+      else {
+        tmp = tmp.getRight();
+      }
+    }
+    return null;
+  }
+
+
+  /*****************************************************
+   * int height()
+   * returns height of this tree (length of longest leaf-to-root path)
+   * eg: a 1-node tree has height 1
+   *****************************************************/
+  public int height()
+  {
+    return heightHelper(_root);
+  }
+
+  public int heightHelper(TreeNode currNode)
+  {
+    if (currNode.getLeft() == null && currNode.getRight() == null){ return 0; } // base case
+    if (currNode.getLeft() != null && currNode.getRight() == null){ // if only left subtree exists, count down left
+      return 1 + heightHelper( currNode.getLeft() );
+    }
+    if (currNode.getLeft() == null && currNode.getRight() != null){ // if only right subtree exists, count down right
+      return 1 + heightHelper( currNode.getRight() );
+    }
+    if (currNode.getLeft() != null && currNode.getRight() != null){ // if both left and right subtrees exist, find the greater value and count down that path
+      if (heightHelper( currNode.getLeft() ) > heightHelper( currNode.getRight() )){
+        return 1 + heightHelper( currNode.getLeft() );
+      }
+      else{
+        return 1 + heightHelper( currNode.getRight() );
+      }
+    }
+    return 0;
+  }
+
+
+  /*****************************************************
+   * int numLeaves()
+   * returns number of leaves in tree
+   *****************************************************/
+  public int numLeaves()
+  {
+    return numLeavesHelper(_root);
+  }
+
+  public int numLeavesHelper(TreeNode currNode)
+  {
+    if (currNode.getLeft() == null && currNode.getRight() == null){ return 1; } // base case is a leaf
+    if (currNode.getLeft() != null && currNode.getRight() == null){ // if only left subtree exists, go down left
+      return numLeavesHelper( currNode.getLeft() );
+    }
+    if (currNode.getLeft() == null && currNode.getRight() != null){ // if only right subtree exists, go down right
+      return numLeavesHelper( currNode.getRight() );
+    }
+    else { // if (currNode.getLeft() != null && currNode.getRight() != null)
+      return numLeavesHelper( currNode.getLeft() ) + numLeavesHelper( currNode.getRight() );
+    }
+  }
+
 
   //main method for testing
   public static void main( String[] args )
@@ -133,7 +208,7 @@ public class BST
       arbol.insert( 6 );
       arbol.insert( 1 );
       arbol.insert( 3 );
-    
+
     /*
       4        4       4         4               4                 4
              /       /  \      /  \            /  \              /  \        *SKETCHED TREES*
@@ -155,6 +230,12 @@ public class BST
       arbol.postOrderTrav();
 
       System.out.println( "\n-----------------------------");
+      System.out.println( "height:" );
+      System.out.println( arbol.height() );
+
+      System.out.println( "\n-----------------------------");
+      System.out.println( "# of leafs:" );
+      System.out.println( arbol.numLeaves() );
       /*~~~~~~~~~~~~move~me~down~~~~~~~~~~~~~~~~~~~~~~
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }
