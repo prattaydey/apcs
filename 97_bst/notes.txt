@@ -1,0 +1,12 @@
+// Team Mamba: Nafiz Labib, Kartik Vanjani, Prattay Dey
+// APCS pd8
+// HW97 -- Prune Your Tree
+// 2022-05-10w
+// time spent: 1.5 hrs
+
+DISCOS:
+- We realized our earlier code from the previous hws could have been implemented in a much more readable and presentable way if we employed boolean helper methods such as isLeaf and avoided long conditional statements when not necessary.
+- When removing a node with 2 subtrees, you can either replace it with the max value of its left subtree or the min value of its right subtree.
+
+QCCs:
+- Is there a more efficient way to implement remove, using more recursion?

@@ -1,11 +1,11 @@
 // Team Mamba: Nafiz Labib, Kartik Vanjani, Prattay Dey
 // APCS pd8
-// HW95 -- Algorithm as Data Structure
-// 2022-05-09m
-// time spent: 1 hrs
+// HW96 -- BSTs is the Perfect Place for Shade
+// 2022-05-10t
+// time spent: 0.7 hrs
 
 DISCOS:
-- We can use recursion in helper methods to go down either the right or left subtree depending on the state/info of the current node and the desired transversal.
+- Most of the work for the height and numLeaves methods went into making sure we had the right conditionals that accounted for every scenario.
 
 QCCs:
-- Why do the instance vars and methods in TreeNode have no visibility? How does it still run?
+- Is there another way to implement height and numLeaves without a helper method that takes a treeNode parameter?

@@ -1,8 +1,8 @@
 // Team Mamba: Nafiz Labib, Kartik Vanjani, Prattay Dey
 // APCS pd8
-// HW96 -- BSTs is the Perfect Place for Shade
-// 2022-05-10t
-// time spent: 0.7 hrs
+// HW97 -- Prune Your Tree
+// 2022-05-10w
+// time spent: 1.5 hrs
 
 /**
  * class BST
@@ -151,7 +151,7 @@ public class BST
 
   public int heightHelper(TreeNode currNode)
   {
-    if (currNode.getLeft() == null && currNode.getRight() == null){ return 0; } // base case
+    if ( isLeaf(currNode) ){ return 0; } // base case
     if (currNode.getLeft() != null && currNode.getRight() == null){ // if only left subtree exists, count down left
       return 1 + heightHelper( currNode.getLeft() );
     }
@@ -181,7 +181,7 @@ public class BST
 
   public int numLeavesHelper(TreeNode currNode)
   {
-    if (currNode.getLeft() == null && currNode.getRight() == null){ return 1; } // base case is a leaf
+    if ( isLeaf(currNode) ){ return 1; } // base case is a leaf
     if (currNode.getLeft() != null && currNode.getRight() == null){ // if only left subtree exists, go down left
       return numLeavesHelper( currNode.getLeft() );
     }
@@ -193,49 +193,131 @@ public class BST
     }
   }
 
+  public boolean isLeaf(TreeNode node)
+  {
+    return node.getLeft() == null && node.getRight() == null;
+  }
+
+  public void remove(int target)
+  {
+    TreeNode trail = null;
+    TreeNode head = _root;
+    while (head.getValue() != target){ // move head to target
+      trail = head; // trail pointer behind head
+      if (head.getValue() > target){ head = head.getLeft(); }
+      else { head = head.getRight(); }
+    }
+
+    // case 1: target node has no children
+    if ( isLeaf(head) ){
+      if (head == _root) { _root = null; } // if target is the root
+      else if ( trail.getLeft() == head ){ // if target is on left side of parent node
+        trail.setLeft(null);
+      }
+      else { trail.setRight(null); } // if target is on right side of parent node
+    }
+
+    // case 2: target node has only one child
+    // only child is the left subtree
+    else if (head.getRight() == null){
+      if (head == _root) { _root = head.getLeft(); }
+      else if ( trail.getLeft() == head ){
+        trail.setLeft( head.getLeft() );
+      }
+      else { trail.setRight( head.getLeft() ); }
+    }
+     //only child is the right subtree
+    else if (head.getLeft() == null){
+      if (head == _root) { _root = head.getRight(); }
+      else if ( trail.getLeft() == head ){
+        trail.setLeft( head.getRight() );
+      }
+      else { trail.setRight( head.getRight() ); }
+    }
+
+    // case 3: target node has 2 children
+    else{
+      // will be used to point to the maximum value of the target node's left subtree
+      TreeNode maxLeft = head.getLeft();
+      while ( head.getRight() != null ){
+        maxLeft = head.getRight(); // used to find the rightmost (max) value of target's left subtree
+      }
+      int greatestVal = maxLeft.getValue();
+      remove( greatestVal ); // since maxLeft is a leaf, we can easily remove import junit.framework.TestCase;
+      // replaces old value with new one
+      head.setValue(greatestVal);
+    }
+  }
+
+
 
   //main method for testing
-  public static void main( String[] args )
-  {
+  public static void main( String[] args ) {
 
-      BST arbol = new BST();
+	BST arbol = new BST();
 
-      //PROTIP: sketch state of tree after each insertion
-      //        ...BEFORE executing these.
-      arbol.insert( 4 );
-      arbol.insert( 2 );
-      arbol.insert( 5 );
-      arbol.insert( 6 );
-      arbol.insert( 1 );
-      arbol.insert( 3 );
+	System.out.println( "tree init'd: " + arbol );
 
-    /*
-      4        4       4         4               4                 4
-             /       /  \      /  \            /  \              /  \        *SKETCHED TREES*
-           2       2     5    2    5          2    5           2     5
-                                    \       /      \         /  \     \
-                                     6     1        6       1   3      6
-    */
+	//inserting in this order will build a perfect tree
+	arbol.insert( 3 );
+	arbol.insert( 1 );
+	arbol.insert( 0 );
+	arbol.insert( 2 );
+	arbol.insert( 5 );
+	arbol.insert( 4 );
+	arbol.insert( 6 );
+	/*
+	*/
 
-      System.out.println( "\n-----------------------------");
-      System.out.println( "pre-order traversal:" );
-      arbol.preOrderTrav();
+	//insering in this order will build a linked list to left
+	/*
+	arbol.insert( 6 );
+	arbol.insert( 5 );
+	arbol.insert( 3 );
+	arbol.insert( 4 );
+	arbol.insert( 2 );
+	arbol.insert( 1 );
+	arbol.insert( 0 );
+	*/
 
-      System.out.println( "\n-----------------------------");
-      System.out.println( "in-order traversal:" );
-      arbol.inOrderTrav();
+	System.out.println( "tree after insertions:\n" + arbol );
+	System.out.println();
 
-      System.out.println( "\n-----------------------------");
-      System.out.println( "post-order traversal:" );
-      arbol.postOrderTrav();
+	System.out.println();
+	for( int i=-1; i<8; i++ ) {
+	    System.out.println(" searching for "+i+": " + arbol.search(i) );
+	}
 
-      System.out.println( "\n-----------------------------");
-      System.out.println( "height:" );
-      System.out.println( arbol.height() );
+	System.out.println();
+	System.out.println( arbol );
 
-      System.out.println( "\n-----------------------------");
-      System.out.println( "# of leafs:" );
-      System.out.println( arbol.numLeaves() );
+	arbol.remove(6);
+	System.out.println();
+	System.out.println( arbol );
+
+	arbol.remove(5);
+	System.out.println();
+	System.out.println( arbol );
+
+	arbol.remove(4);
+	System.out.println();
+	System.out.println( arbol );
+
+	arbol.remove(3);
+	System.out.println();
+	System.out.println( arbol );
+
+	arbol.remove(2);
+	System.out.println();
+	System.out.println( arbol );
+
+	arbol.remove(1);
+	System.out.println();
+	System.out.println( arbol );
+
+	arbol.remove(0);
+	System.out.println();
+	System.out.println( arbol );
       /*~~~~~~~~~~~~move~me~down~~~~~~~~~~~~~~~~~~~~~~
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }
