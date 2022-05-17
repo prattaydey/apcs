@@ -1,3 +1,9 @@
+// Team Mamba: Nafiz Labib, Kartik Vanjani, Prattay Dey
+// APCS pd8
+// HW99 -- Some Are More Equal Than Others, Codified
+// 2022-05-13f
+// time spent: 0.5 hrs + classtime
+
 import java.util.ArrayList;
 
 public class ArrayPriorityQueue
@@ -21,22 +27,30 @@ public class ArrayPriorityQueue
     public int peekMin(){
       int min = 0;
       for (int i = 1; i < _data.size(); i++){
-        if (_data.get(i) < _data.get(min)){ min = i; }
+        if ( _data.get(min) > _data.get(i) ){
+          min = i;
+        }
       }
       return _data.get(min);
     }
 
     public int removeMin(){
-      return _data.remove( peekMin() );
+      // finds the min value, finds its index in the queue, then removes that index
+      return _data.remove( _data.indexOf( peekMin() ) );
     }
+
+
 
     public static void main(String[] args){
       ArrayPriorityQueue test = new ArrayPriorityQueue();
 
-      for (int i = 0; i < 10; i++){
-        int random = (int) ( Math.random() * 20 );
-        test.add(random);
-      }
+      test.add(4);
+      test.add(7);
+      test.add(43);
+      test.add(0);
+      test.add(22);
+      test.add(-1);
+      test.add(9);
 
       System.out.println( test.isEmpty() ); // false
 

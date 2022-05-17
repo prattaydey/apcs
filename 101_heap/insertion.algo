@@ -1,0 +1,16 @@
+// Team Mamba: Nafiz Labib, Kartik Vanjani, Prattay Dey
+// APCS pd8
+// HW101 -- Heap O' Trouble
+// 2022-05-16m
+// time spent: 0.5 hrs
+
+INSERTION ALGO:
+If insertion > subtree Root:
+  subtree Root = insertion
+  
+else:
+  check heights of root's subtrees
+  traverse down the shorter subtree until leaf node is reached (if heights equal, go down left st by default)
+  add node at this leaf
+  
+  

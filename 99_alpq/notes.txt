@@ -1,0 +1,11 @@
+// Team Mamba: Nafiz Labib, Kartik Vanjani, Prattay Dey
+// APCS pd8
+// HW99 -- Some Are More Equal Than Others, Codified
+// 2022-05-13f
+// time spent: 0.5 hrs + classtime
+
+DISCOS:
+- Implementing the remove method was fairly easy. We used the peekMin to find the min value and set it's index as the input for ArrayList's remove method.
+
+QCCs:
+- Is there a way to implement remove with a smaller time complexity?

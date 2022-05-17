@@ -1,0 +1,13 @@
+// Team Mamba: Nafiz Labib, Kartik Vanjani, Prattay Dey
+// APCS pd8
+// HW101 -- Heap O' Trouble
+// 2022-05-16m
+// time spent: 0.5 hrs
+
+DISCOS:
+- Our algo for heap removal was very similar to that of a BST, as we did essentially the same thing for the 3 different cases.
+
+
+QCCs:
+- When would we use heaps?
+- Our group wasn't sure what to do when removing a key value that is found in two nodes. We considered removing the node that is the shortest distance away from the root. 
