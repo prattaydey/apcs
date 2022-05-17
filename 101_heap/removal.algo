@@ -1,0 +1,16 @@
+// Team Mamba: Nafiz Labib, Kartik Vanjani, Prattay Dey
+// APCS pd8
+// HW101 -- Heap O' Trouble
+// 2022-05-16m
+// time spent: 0.5 hrs
+
+REMOVAL ALGO:
+
+Have two pointers, one piggybacking the other
+One will be for the node of the removal
+One will be for it's parent
+
+If node of removal:
+a) is a leaf (no children) --> set the left or right child of the parent node to null (depending on which direction it is)
+b) has one child --> point the parent node to the node of removal's child
+c) has two children --> create a temp pointer to the child that has minimum key value. Remove the node, and point the parent to the temp pointer. 
