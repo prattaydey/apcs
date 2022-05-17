@@ -51,14 +51,8 @@ public class ALHeap
    */
   public Integer peekMin()
   {
-    int min = 0;
-    for (int i = 1; i < _heap.size(); i++){
-      if (_heap[min] > _heap[i]){
-        min = i;
-      }
-    }
-    return _heap.get(min);
-  }//O(n)
+    return _heap[0]; // root of min heap is always min value
+  }//O(1)
 
 
   /**
@@ -70,6 +64,7 @@ public class ALHeap
    */
   public void add( Integer addVal )
   {
+
   }//O(?)
 
 
