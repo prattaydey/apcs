@@ -102,6 +102,10 @@ public class ALHeap
    */
   public Integer removeMin()
   {
+    if (_heap.isEmpty()){
+      return -1;
+    } // when heap literally has nothing
+
     int minVal = _heap.get(0); // saves original root to return later
     swap(0, _heap.size() - 1);
     _heap.remove( _heap.size() - 1 ); // removes original root
