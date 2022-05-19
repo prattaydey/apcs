@@ -1,45 +1,14 @@
-import java.util.NoSuchElementException;
+// Team Mamba: Nafiz Labib, Kartik Vanjani, Prattay Dey
+// APCS pd8
+// HW103 -- Erica's Friends, Hugo, and The One in the Middle
+// 2022-05-18w
+// time spent: 1.0 hr + classtime
 
-public class RunMed {
+Algorithms: (Courtesy of class hints)
 
-    private ALHeapMax lilVals;
-    private ALHeapMin bigVals;
+Add --
+1. Compare the new value with maxheap's root. If it is greater, add to minheap. Otherwise, add to maxheap.
+2. If the difference in sizes between the heaps is 2 or more, then remove root from the bigger heap and add to the smaller one until size difference is 1 or less.
 
-    public RunMed(){
-        lilVals = new ALHeapMax();
-        bigVals = new ALHeapMin();
-    }
-
-    public double getMedian(){
-        if ( lilVals.isEmpty()){
-            throw new NoSuchElementException();
-        }
-        if ( bigVals.isEmpty() ){
-            return lilVals.peekMax();
-        }
-        if ( bigVals.size() < lilVals.size() ){
-            return lilVals.peekMax();
-        }
-        return ( lilVals.peekMax() + bigVals.peekMin() ) / 2;
-    }
-
-    public void add( Integer newVal ){
-        if( lilVals.isEmpty() ){
-            lilVals.add(newVal);
-        }
-        if(lilVals.peekMax().compareTo(newVal) < 0  ){
-            bigVals.add(newVal);
-        }
-        else{
-            lilVals.add(newVal);
-        }
-
-        if ( lilVals.size() - bigVals.size() > 1 ) {
-            bigVals.add(lilVals.removeMax() );
-        }
-
-        else if( bigVals.size() > lilVals.size() ){
-            lilVals.add( bigVals.removeMin() );
-        }
-    }
-}
+Get Median --
+If the heaps are equal size, find the average of the heaps' roots. Otherwise, return the root of the maxHeap.
